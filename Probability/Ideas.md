@@ -52,3 +52,4 @@ If looking for a number to chose as the minimal number before rolling, you can t
 **idea 1** Suppose i randomly come in a 1 hour range and stay for X mins. and another person comes in the same range and stays for Y mins. The proba of us meeting can be found by graphing a square with Y=X being that we meet at that time.
 Then for each y=X I can either have come at most X mins before or that he left at most Y mins after. this gives us a surface of two triangles with a ruban between them. that ruban's area (relative to that of the square) presents the proba of us meeting. $(60*60-X^2/2-Y^2/2)$
 
+**bridge passing :** We order them from fasters to slowest as $x_1,x_2 ..., x_n$. For n=4 the formula is $3 x_2 + x_1 + x+4$. The idea is to have two speedsters switching.
