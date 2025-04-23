@@ -21,6 +21,10 @@ $$P(A|B) = \frac{P(A)*P(B|A)}{P(B)}$$
 
 If you are in a game with $b : 1$ odds, you should bet $f = \frac{bp-q}{b}$ of your fortune every game. $p$ being your winning % and $q$ your loosing percentage.
 
+### Markov chains in expected probability : 
+
+It's basically just the same $E(p) = x + \frac{a}{b} E(p)$ but with $p_i$'s as probabilities of events that originates from the event with proba $p$.
+
 ## Ideas
 
 ### Distribution
