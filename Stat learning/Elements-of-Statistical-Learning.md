@@ -6,6 +6,6 @@ Next, it should be noted that at the time of writing these notes, I'm still a no
 
 To summerize, I will start with ISL and then switch to ESL once I feel like I have a sufficient mastery of the necessary topics.
 
-## Chapter I
+## Chapter I [ESL]
 Supervised learning is when we have an outcome variable to 'guide the learning process', thus we compare our model's result $\hat y$ to some desired result $y$.
 Unsupervised learning on the otherside, our task is to describe how the data is organized/clustered.
