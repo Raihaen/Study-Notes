@@ -15,8 +15,6 @@ Example on usecase of unsupervised learning : divide a demgraphic into groups to
 
 **A brief history of statistical learning:**
 
-Start of 19th century, *least squares* method was develloped, impplementing an early form of *linear regression (LR)*. What followed this was *linear discriminant analysis* (an application of LR for qualitative values). After that, *logistical regression* was develloped, then a *general linear model* was developed, an entire class of SL methods with LR and logReg as special cases.
-
-More methods were developped in the 70s, but were still linear. It wasn't untill the 80s that we had enough computation power for *non-linear methods* : *classification and regression trees* were develloped, followed by *generalized additive models*. *Neural networks* got some traction in the 80s and *support vector machines* in the 90s.
-
+Start of 19th century, *least squares* method was develloped, impplementing an early form of *linear regression (LR)*. What followed this was *linear discriminant analysis* (an application of LR for qualitative values). After that, *logistical regression* was develloped, then a *general linear model* was developed, an entire class of SL methods with LR and logReg as special cases.\
+More methods were developped in the 70s, but were still linear. It wasn't untill the 80s that we had enough computation power for *non-linear methods* : *classification and regression trees* were develloped, followed by *generalized additive models*. *Neural networks* got some traction in the 80s and *support vector machines* in the 90s.\
 Nowadays, this set of techniques became a separate filed focused on supervised and unsupervised modeling and predictions : statistical learning
