@@ -11,4 +11,8 @@ Supervised learning is when we have an outcome variable to 'guide the learning p
 Unsupervised learning on the otherside, our task is to describe how the data is organized/clustered.
 
 ## Chapter I [ISL]
+Example on usecase of unsupervised learning : divide a demgraphic into groups to run ads on.
+
+**A brief history of statistical learning:**
+Start of 19th century, least squares method was develloped, impplementing an early form of linear regression (LR). What followed this was linear discriminant analysis (an application of LR for qualitative values). After that, logistical regression was develloped, then a general linear model was developed, an entire class of SL methods with LR and logReg as special cases.
 
