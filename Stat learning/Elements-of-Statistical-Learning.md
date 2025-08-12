@@ -20,4 +20,4 @@ Nowadays, this set of techniques became a separate filed focused on supervised a
 
 ### Notation:
 Let $n$ be the number of observations, $p$ the number of variables. Let $\text{X}$ the matrix representing observations of variables, sucht that $x_{ij}$ is the $i$-th observation's $j$-th variable value.
-Remeber that vectors are always repsented as columns. and so, $\text{X}_j$ would be the set of observations for the $j$-th variable. However, to get the set of variable values for one observation, we need to traspose the column to get a vector :  ${\text{X}_i}^T$
+Remeber that vectors are always repsented as columns. and so, $\text{x}_j$ would be the set of observations for the $j$-th variable. We can represent $\text{X}$ as a vector of observation columns : $\text{X} = \{ x_i^T \}$ 
