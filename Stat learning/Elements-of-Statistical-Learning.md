@@ -18,3 +18,4 @@ Start of 19th century, *least squares* method was develloped, impplementing an e
 
 More methods were developped in the 70s, but were still linear. It wasn't untill the 80s that we had enough computation power for *non-linear methods* : *classification and regression trees* were develloped, followed by *generalized additive models*. *Neural networks* got some traction in the 80s and *support vector machines* in the 90s.
 
+Nowadays, this set of techniques became a separate filed focused on supervised and unsupervised modeling and predictions : statistical learning
