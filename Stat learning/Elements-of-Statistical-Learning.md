@@ -48,13 +48,14 @@ One thing to note is that, complex models might allow for better predictions, bu
 On the other side, **non parametric** methods try to directly fit the response's data (quoting the book : **create an estimate to $f$ as close as possible to the observed data, subject to the fit being smooth**). And while this has the advantage of making no assumptions on the data, we run into two problems : the risk of overfitting (we usually play with the curve's smootheness to reduce it), and we need large amounts of data to create a good fitting $\hat f$. Which might not always be possible.
 
 #### More on supervised vs unsupervised :
-We can unsupervised learning by trying to hypothyse the relations between variables / observations. A usual method of treating unsupervised learning is through clustering[^3].\
-Note that clustering $\not =$ classification. Clustering is unsupervised, while classification is supervised (you try to assign an element to one of already defined classes).\
+We can unsupervised learning by trying to hypothyse the relations between variables / observations. A usual method of treating unsupervised learning is through clustering.\
+Note that **clustering $\not =$ classification**. Clustering is unsupervised, while classification is supervised (you try to assign an element to one of already defined classes).\
 Clustering, although possible to be visualised with 2/3 featurs, it becomes increasingly complicated as $p$ gets higher and higher, *d'ou* the necessity of methods to handle this.\
 Another intresting question, is when you have $n$ observations of the features, but only $m<n$ observations of the response. This is the case if it's expensive to get observations on $Y$. This is somewhat in the middle of both fields : a semi-supervised learning problem where you try to incorporate info from both fields.
+
+#### Regression vs Classification
 
 # Footnotes :
 - [^1] -- free will ?.
 - [^2] -- proof : $E[{(Y- \hat Y)}^2] = E[(f + \epsilon - \hat f)^2] = E[f^2 + \hat f ^2 + \epsilon ^2 + 2 \epsilon (f-\hat f) - 2 (f \cdot \hat f)] = E[(f-\hat f)^2] + E(\epsilon ^2 ) + 2 E(\epsilon) \cdot E(f - \hat f)$. -- since $\epsilon$ is independent from both $f$ and $\hat f$.\
 We get : $ E[(f-\hat f)^2] + E(\epsilon ^2 ) - E(\epsilon)^2 = (f-\hat f)^2 + \text{Var}(\epsilon)$ since $E(\epsilon) = 0$ 
-- [^3] -- Note that clustering $\not =$ classification. Clustering is unsupervised, while classification is supervised (you try to assign an element to one of already defined classes).
