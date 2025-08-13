@@ -49,6 +49,7 @@ On the other side, **non parametric** methods try to directly fit the response's
 
 #### More on supervised vs unsupervised :
 We can unsupervised learning by trying to hypothyse the relations between variables / observations. A usual method of treating unsupervised learning is through clustering[^3].\
+Note that clustering $\not =$ classification. Clustering is unsupervised, while classification is supervised (you try to assign an element to one of already defined classes).\
 Clustering, although possible to be visualised with 2/3 featurs, it becomes increasingly complicated as $p$ gets higher and higher, *d'ou* the necessity of methods to handle this.\
 Another intresting question, is when you have $n$ observations of the features, but only $m<n$ observations of the response. This is the case if it's expensive to get observations on $Y$. This is somewhat in the middle of both fields : a semi-supervised learning problem where you try to incorporate info from both fields.
 
