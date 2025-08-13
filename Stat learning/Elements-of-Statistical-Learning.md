@@ -28,12 +28,11 @@ Let $X=(X_1,X_2,...,X_p)$ be the set of feature variables.\
 To make a model, we assume there is a relationship between features and the response : $Y=f(X)+ \epsilon$ for a fixed but unknown function $f$ and a **random error term** $\epsilon$, independent of $X$ and with mean 0.\
 Think of $f$ as the **systematic** information $X$ gives on $Y$.
 
-Why do we estimate $f$? This is due to 2 reasons : prediction and inference.
+Why do we estimate $f$? (it should be understood as, why do we do statistical learning, more than why estimate $f$ itself) This is due to 2 reasons : prediction and inference.
 ### Prediction :
 - Reductible vs Irreductible error : Our prediction's error comes from two different sources : one can be reduced through better models (reductible) and that's by making our $\hat f$ the closest to $f$ possible. However, even if our $\hat f$ was perfect, there's still an error non dependent on $X$, which we symbolize by $\epsilon$, this error is out of our control and so is irreductible. It might come from some other predictor variables we didn't account for, or simply from chance and randomness (individual medication's minor production differences, dice rolls, etc...) [^1].\
 We can write [^2] :\
-$ E[{(Y- \hat Y)}^2] = (f(X) -\hat f(X))^2+ \text{Var}(\epsilon)$ \
-The first part is reductible while the second one isn't.
+$ E[{(Y- \hat Y)}^2] = (f(X) -\hat f(X))^2+ \text{Var}(\epsilon)$ -- The first part is reductible while the second one isn't.
 
 ### Inference :
 
