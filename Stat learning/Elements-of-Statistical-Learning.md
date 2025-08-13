@@ -55,8 +55,8 @@ Another intresting question, is when you have $n$ observations of the features, 
 
 #### Regression vs Classification
 Data is either quantitative or qualitative (categorical), the type of predictor variables doesn't matter much and most methods can be used as long as the these features are properly coded.\
-However, different methods are used depending on the type of dependent variable $Y$, least squares linear regression is used for quantitative $Y$s (Regression), wheras logistic regression is usually used for binary classification (a Classification method despite its name).
-\ Some other SL methods (such as K-nearest neighbors or boosting) can be used for either...
+However, different methods are used depending on the type of dependent variable $Y$, least squares linear regression is used for quantitative $Y$s (Regression), wheras logistic regression is usually used for binary classification (a Classification method despite its name).\
+Some other SL methods (such as K-nearest neighbors or boosting) can be used for either...
 
 # Footnotes :
 - [^1] -- free will ?.
