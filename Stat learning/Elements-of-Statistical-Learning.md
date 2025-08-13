@@ -37,6 +37,6 @@ We can write [^2] : $$E[{(Y- \hat Y)}^2] = {(f(X) -\hat f(X))}^2 + \text{Var}(\e
 
 
 # Footnotes :
-[^1] -- free will ?.
-[^2] -- proof : $E[{(Y- \hat Y)}^2] = E[(f + \epsilon - \hat f)^2] = E[f^2 + \hat f ^2 + \epsilon ^2 + 2 \epsilon (f-\hat f) - 2 (f-\hat f)] = E[(f-\hat f)^2] + E(\epsilon ^2 ) + 2 E(\epsilon) \cdot E(f - \hat f)$ (since $\epsilon$ is independent from both $f$ and $\hat f$.\
+- [^1] -- free will ?.
+- [^2] -- proof : $E[{(Y- \hat Y)}^2] = E[(f + \epsilon - \hat f)^2] = E[f^2 + \hat f ^2 + \epsilon ^2 + 2 \epsilon (f-\hat f) - 2 (f \cdot \hat f)] = E[(f-\hat f)^2] + E(\epsilon ^2 ) + 2 E(\epsilon) \cdot E(f - \hat f)$. -- since $\epsilon$ is independent from both $f$ and $\hat f$.\
 We get : $ E[(f-\hat f)^2] + E(\epsilon ^2 ) - E(\epsilon)^2 = (f-\hat f)^2 + \text{Var}(\epsilon)$ since $E(\epsilon) = 0$ 
