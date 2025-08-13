@@ -24,4 +24,4 @@ Remeber that vectors are always repsented as columns. and so, $\text{x}_j$ would
 
 ## Chapter 2 [ISL]
 Inputs $X_1, ..., X_p$ go by different names : *predictors, features, independent variables...*, the output of the model is called the *dependent variable* or *response*.
-To make a model, we assume there is a relationship between features and the response : $Y=f(X)+ \epsilon$ for a fixed but unknown function $f$ and a **random error term** $\epsilon$. 
+To make a model, we assume there is a relationship between features and the response : $Y=f(X)+ \epsilon$ for a fixed but unknown function $f$ and a **random error term** $\epsilon$, independent of $X$ and with mean 0.
