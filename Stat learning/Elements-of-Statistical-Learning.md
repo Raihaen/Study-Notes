@@ -31,10 +31,12 @@ Think of $f$ as the **systematic** information $X$ gives on $Y$.
 Why do we estimate $f$? This is due to 2 reasons : prediction and inference.
 ### Prediction :
 - Reductible vs Irreductible error : Our prediction's error comes from two different sources : one can be reduced through better models (reductible) and that's by making our $\hat f$ the closest to $f$ possible. However, even if our $\hat f$ was perfect, there's still an error non dependent on $X$, which we symbolize by $\epsilon$, this error is out of our control and so is irreductible. It might come from some other predictor variables we didn't account for, or simply from chance and randomness (individual medication's minor production differences, dice rolls, etc...) [^1].\
-We can write : $$E[{(Y- \hat Y)}^2] = (f-\hat f) + \text{Var}(\epsilon)$$
+We can write [^2] : $$E[{(Y- \hat Y)}^2] = {(f(X) -\hat f(X))}^2 + \text{Var}(\epsilon)$$
 
 
 
 
 # Footnotes :
- [^1] : free will ?.
+[^1] -- free will ?.
+[^2] -- proof : $E[{(Y- \hat Y)}^2] = E[(f + \epsilon - \hat f)^2] = E[f^2 + \hat f ^2 + \epsilon ^2 + 2 \epsilon (f-\hat f) - 2 (f-\hat f)] = E[(f-\hat f)^2] + E(\epsilon ^2 ) + 2 E(\epsilon) \cdot E(f - \hat f)$ (since $\epsilon$ is independent from both $f$ and $\hat f$.\
+We get : $ E[(f-\hat f)^2] + E(\epsilon ^2 ) - E(\epsilon)^2 = (f-\hat f)^2 + \text{Var}(\epsilon)$ since $E(\epsilon) = 0$ 
