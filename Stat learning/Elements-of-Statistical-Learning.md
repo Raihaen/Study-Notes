@@ -56,4 +56,4 @@ Another intresting question, is when you have $n$ observations of the features, 
 - [^1] -- free will ?.
 - [^2] -- proof : $E[{(Y- \hat Y)}^2] = E[(f + \epsilon - \hat f)^2] = E[f^2 + \hat f ^2 + \epsilon ^2 + 2 \epsilon (f-\hat f) - 2 (f \cdot \hat f)] = E[(f-\hat f)^2] + E(\epsilon ^2 ) + 2 E(\epsilon) \cdot E(f - \hat f)$. -- since $\epsilon$ is independent from both $f$ and $\hat f$.\
 We get : $ E[(f-\hat f)^2] + E(\epsilon ^2 ) - E(\epsilon)^2 = (f-\hat f)^2 + \text{Var}(\epsilon)$ since $E(\epsilon) = 0$ 
-- [^3] -- Note that clustering $\not =$ classification. Clustering is unsupervised, while classification is.
+- [^3] -- Note that clustering $\not =$ classification. Clustering is unsupervised, while classification is supervised (you try to assign an element to one of already defined classes).
