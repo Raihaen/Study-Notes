@@ -34,7 +34,7 @@ Why do we estimate $f$? This is due to 2 reasons : prediction and inference.
 We can write [^2] : $$
 E[{(Y- \hat Y)}^2] =
 \underbrace{{(f(X) -\hat f(X))}^2}_{\text{reducible}} +
-\underbrace{Var(\epsilon)}_{\text{irreducible}}
+
 $$
 
 
