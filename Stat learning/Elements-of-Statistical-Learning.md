@@ -35,9 +35,12 @@ We can write [^2] :\
 $ E[{(Y- \hat Y)}^2] = (f(X) -\hat f(X))^2+ \text{Var}(\epsilon)$ -- The first part is reductible while the second one isn't.
 
 ### Inference :
+Sometimes, our goal is not to predict a phenomenon, but to study the relationships between some variables and our target. Which predictors are associated with the response ? which variables significantly affect the response? in what way ? Is this relationship linear or an other type? 
 
+To give an example on the difference btween the two, consider a company that wants to know their product target, based on some features, they want to know who will have a buy response : this is prediction. However, on another setting, a company might be intrested in studying which media are associated with sales, and how do investements in such media convert into sales (ROI / conversion speed ect). You might also be intrested in both reasons (inference and prediction).\
+One thing to note is that, complex models might allow for better predictions, but that might be at the expense of interpretabitly (and so compremising inference).
 
-
+##
 
 # Footnotes :
 - [^1] -- free will ?.
