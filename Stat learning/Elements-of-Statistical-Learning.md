@@ -43,7 +43,7 @@ One thing to note is that, complex models might allow for better predictions, bu
 ## How do we estimate $f$ ?
 
 ### Parametric vs non parametric methods :
-Parametric methods are basically transforming the question of estimating $f$ into estimating parameters -- say, $\Beta_i$'s for $\hat f = \sum \Beta_i X_i$. A downside to this is that it makes assumptions on the nature of the relations between $X_i$ and $Y$, which make our model unprecise.
+Parametric methods are basically transforming the question of estimating $f$ into estimating parameters -- say, $\Beta_i$'s for $\hat f = \sum \Beta_i X_i$. A downside to this is that it makes assumptions on the nature of the relations between $X_i$ and $Y$, which make our model unprecise.\
 On the other side, non parametric methods try to directly fit the response's data. And while this has the advantage of making no assumptions on the data, we run into two problems : the risk of overfitting (we usually play with the curve's smootheness to reduce it), and we need large amounts of data to create a good fitting $\hat f$. Which might not always be possible.
 
 
