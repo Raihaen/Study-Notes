@@ -47,6 +47,10 @@ One thing to note is that, complex models might allow for better predictions, bu
 **Parametric** methods are basically transforming the question of estimating $f$ into estimating parameters -- say, $\Beta_i$'s for $\hat f = \sum \Beta_i X_i$. A downside to this is that it makes assumptions on the nature of the relations between $X_i$ and $Y$, which might make our model imprecise. A common approach is to estimate parameters by minimizing the least square error, but more metrics exist.\
 On the other side, **non parametric** methods try to directly fit the response's data (quoting the book : **create an estimate to $f$ as close as possible to the observed data, subject to the fit being smooth**). And while this has the advantage of making no assumptions on the data, we run into two problems : the risk of overfitting (we usually play with the curve's smootheness to reduce it), and we need large amounts of data to create a good fitting $\hat f$. Which might not always be possible.
 
+#### More on supervised vs unsupervised :
+We can unsupervised learning by trying to hypothyse the relations between variables / observations. A usual method of treating unsupervised learning is through clustering.\
+Clustering, although possible to be visualised with 2/3 featurs, it becomes increasingly complicated as $p$ gets higher and higher, *d'ou* the necessity of methods to handle this.\
+Another intresting question, is when you have $n$ observations of the features, but only $m<n$ observations of the response. This is the case if it's expensive to get observations on $Y$. This is somewhat in the middle of both fields : a semi-supervised learning problem where you try to incorporate info from both fields.
 
 # Footnotes :
 - [^1] -- free will ?.
