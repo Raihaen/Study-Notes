@@ -79,6 +79,7 @@ Homework : find a intuitive 'proof'/reasoning on why bias decreases with flexibi
 - [^2] -- proof : $E[{(Y- \hat Y)}^2] = E[(f + \epsilon - \hat f)^2] = E[f^2 + \hat f ^2 + \epsilon ^2 + 2 \epsilon (f-\hat f) - 2 (f \cdot \hat f)] = E[(f-\hat f)^2] + E(\epsilon ^2 ) + 2 E(\epsilon) \cdot E(f - \hat f)$. -- since $\epsilon$ is independent from both $f$ and $\hat f$.\
 We get : $ E[(f-\hat f)^2] + E(\epsilon ^2 ) - E(\epsilon)^2 = (f-\hat f)^2 + \text{Var}(\epsilon)$ since $E(\epsilon) = 0$ 
 - [^3] -- note that for a perfect $\hat f = f$, we will have $\text{MSE}= \text{Var}(\epsilon)$ as the theoretical lower bound on MSE; this is derived from the equation on [^2].\ Ofc this theoretical lower bound is usually unknown since we dont know the shape of $f$.
-- [^4] -- proof : $\text{E}[(y_0 - \hat f(x_0))^2] = \text{E}[(f(x_0)-\hat f(x_0))^2] + \text{Var}(\epsilon)$\
-$= \text{E}[f(x_0) ^2 +\hat f(x_0)^2 - 2 f(x_0) \cdot \hat f(x_0)] = \text{E}(\hat f(x_0) ^2) - [\text{E}(\hat f(x_0)]^2 + [\text{E}(\hat f(x_0)]^2 + \text{E}[f(x_0) ^2 - 2 f(x_0) \cdot \hat f(x_0)]  $\ 
-$= \text{Var}(\hat f(x_0)) + [\text{E}(\hat f(x_0)]^2 + f(x_0) ^2 - 2 f(x_0) \text{E}[\hat f(x_0]] $
+- [^4] -- proof : $\text{E}[(y_0 - \hat f(x_0))^2] = \text{E}[(f(x_0)-\hat f(x_0))^2] + \text{Var}(\epsilon)$. (same as in [^2]).\
+$=\text{Var}(\epsilon) + \text{E}[f(x_0) ^2 +\hat f(x_0)^2 - 2 f(x_0) \cdot \hat f(x_0)] = \text{Var}(\epsilon) + \text{E}(\hat f(x_0) ^2) - [\text{E}(\hat f(x_0)]^2 + [\text{E}(\hat f(x_0)]^2 + \text{E}[f(x_0) ^2 - 2 f(x_0) \cdot \hat f(x_0)]  $. (separating).\
+$= \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{E}(\hat f(x_0)]^2 + f(x_0) ^2 - 2 f(x_0) \text{E}[\hat f(x_0]] = \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0))  + [f-\text{E}(\hat f(x_0))]^2 $ which is\
+$\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
