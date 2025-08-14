@@ -79,7 +79,8 @@ The clash between these two functions gives us our trade off and the U-shaped MS
 Since $f$ is inobserved, we can't really comupute test bias or var, but it's important to keep this trade-off in mind.
 
 #### The classification setting :
-
+Same as with regression, we can imagine a probability function that gives us the probality of having element with observations $x_0$ be in class $C$.
+We can prove that the best classifier, called the Bayes classifier, is basically choosing for each element class $C$ such that $\text{max} \. P(y_0 = C | x_0 )$
 
 # Footnotes :
 - [^1] -- free will ?.
