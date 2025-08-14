@@ -68,7 +68,7 @@ In real world applications, it's usually hard to estimate the test MSE (because 
 
 #### The Bias-Variance trade off
 Suppose we train a model on multiple datasets, creating multiple $\hat f$'s. We then apply each on some $x_0$. We have : 
-$\text{E}(y_0 - \hat f(x_0)) = \text{Var}(\hat f) + [\text{Bias}(\hat f)]^2+ \text{Var}(\epsilon)$
+$\text{E}(y_0 - \hat f(x_0)) = \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2+ \text{Var}(\epsilon)$
 
 Homework : find a intuitive 'proof'/reasoning on why bias decreases with flexibility while var increases.
 
