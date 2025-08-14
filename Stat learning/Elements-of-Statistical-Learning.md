@@ -73,7 +73,8 @@ $\text{E}[(y_0 - \hat f(x_0))^2] = \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f
 Notice that this sets a theoretical inf bound :  $\text{Var}(\epsilon)$. Furthermore, both square of Bias and Var of our estimator of $\hat f$ are positive, this means that minimizing them means getting them as close to 0 as possible.\
 This is however complicated, as they behave differently one another :
 - **Var** : As the model's felxibility increases, it starts fitting for our training set like a bespoke suit, capturing inexistant patters, and so, changing a point by another will make this "bespoke" model change drastically, thus making Var an function that increases with flexibility (/ degrees of freedom).
-- **Bias** : On the other side, Bias is the difference between $f$ and our average estimation of it, and so, the more flexible the model, the closer it will fit $f$ -- except at training points, but since we're talking about the average, it will [^5] be will get closer to $f$...\
+- **Bias** : On the other side, Bias is the difference between $f$ and our average estimation of it, and so, the more flexible the model, the closer it will fit $f$ -- except at training points, but since we're talking about the average, it will [^5] be will get closer to $f$...
+
 The clash between these two functions gives us our trade off and the U-shaped MSE graph : eventually the rate of increase of Var will surpass that of decrease of Bias, making the MSE go up again.\
 Since $f$ is inobserved, we can't really comupute test bias or var, but it's important to keep this trade-off in mind.
 
