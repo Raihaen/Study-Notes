@@ -58,6 +58,14 @@ Data is either quantitative or qualitative (categorical), the type of predictor 
 However, different methods are used depending on the type of dependent variable $Y$, least squares linear regression is used for quantitative $Y$s (Regression), wheras logistic regression is usually used for binary classification (a Classification method despite its name).\
 Some other SL methods (such as K-nearest neighbors or boosting) can be used for either...
 
+### Assessing model accuracy
+There is no perfect model, the best models differ depending on situations...
+#### Fitting the target
+We usually asses model accuracy using $\text{MSE}=\frac{1}{n} \sum (y_i-\hat f)^2$ (mean squared error).
+-Overfitting reffers specifically to the situation where a model with less degrees of freedom would've yielded better results. We always expect the testing accuracy to be less than the training accuracy since all models directly or indirectly try to minimize the training error.
+-Example to illustrate overfitting
+
+
 # Footnotes :
 - [^1] -- free will ?.
 - [^2] -- proof : $E[{(Y- \hat Y)}^2] = E[(f + \epsilon - \hat f)^2] = E[f^2 + \hat f ^2 + \epsilon ^2 + 2 \epsilon (f-\hat f) - 2 (f \cdot \hat f)] = E[(f-\hat f)^2] + E(\epsilon ^2 ) + 2 E(\epsilon) \cdot E(f - \hat f)$. -- since $\epsilon$ is independent from both $f$ and $\hat f$.\
