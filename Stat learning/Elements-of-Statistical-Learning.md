@@ -78,8 +78,7 @@ This is however complicated, as they behave differently one another :
 The clash between these two functions gives us our trade off and the U-shaped MSE graph : eventually the rate of increase of Var will surpass that of decrease of Bias, making the MSE go up again.\
 Since $f$ is inobserved, we can't really comupute test bias or var, but it's important to keep this trade-off in mind.
 
-
-Homework : find a intuitive 'proof'/reasoning on why bias decreases with flexibility while var increases.
+#### The classification setting :
 
 
 # Footnotes :
