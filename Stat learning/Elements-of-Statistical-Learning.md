@@ -81,5 +81,5 @@ We get : $ E[(f-\hat f)^2] + E(\epsilon ^2 ) - E(\epsilon)^2 = (f-\hat f)^2 + \t
 - [^3] -- note that for a perfect $\hat f = f$, we will have $\text{MSE}= \text{Var}(\epsilon)$ as the theoretical lower bound on MSE; this is derived from the equation on [^2].\ Ofc this theoretical lower bound is usually unknown since we dont know the shape of $f$.
 - [^4] -- proof : $\text{E}[(y_0 - \hat f(x_0))^2] = \text{E}[(f(x_0)-\hat f(x_0))^2] + \text{Var}(\epsilon)$. (same as in [^2]).\
 $=\text{Var}(\epsilon) + \text{E}[f(x_0) ^2 +\hat f(x_0)^2 - 2 f(x_0) \cdot \hat f(x_0)] = \text{Var}(\epsilon) + \text{E}(\hat f(x_0) ^2) - [\text{E}(\hat f(x_0)]^2 + [\text{E}(\hat f(x_0)]^2 + \text{E}[f(x_0) ^2 - 2 f(x_0) \cdot \hat f(x_0)]  $. (separating).\
-$= \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{E}(\hat f(x_0)]^2 + f(x_0) ^2 - 2 f(x_0) \text{E}[\hat f(x_0]] = \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0))  + [f-\text{E}(\hat f(x_0))]^2 $ which is\
+$= \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{E}(\hat f(x_0)]^2 + f(x_0) ^2 - 2 f(x_0) \text{E}[\hat f(x_0]] = \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0))  + [f-\text{E}(\hat f(x_0))]^2 $ which is through law of Bias :\
 $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
