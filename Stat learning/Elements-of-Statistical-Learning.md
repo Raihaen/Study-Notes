@@ -69,7 +69,14 @@ In real world applications, it's usually hard to estimate the test MSE (because 
 #### The Bias-Variance trade off
 Suppose we train a model on multiple datasets, creating multiple $\hat f$'s. We then apply each on some $x_0$. We have :\
 $\text{E}[(y_0 - \hat f(x_0))^2] = \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2+ \text{Var}(\epsilon)$
-[^4].
+[^4].\
+Notice that this sets a theoretical inf bound :  $\text{Var}(\epsilon)$. Furthermore, both square of Bias and Var of our estimator of $\hat f$ are positive, this means that minimizing them means getting them as close to 0 as possible.\
+This is however complicated, as they behave differently one another :
+- **Var** : As the model's felxibility increases, it starts fitting for our training set like a bespoke suit, capturing inexistant patters, and so, changing a point by another will make this "bespoke" model change drastically, thus making Var an function that increases with flexibility (/ degrees of freedom).
+- **Bias** : On the other side, Bias is the difference between $f$ and our average estimation of it, and so, the more flexible the model, the closer it will fit $f$ -- except at training points, but since we're talking about the average, it will [^5] be will get closer to $f$...\
+The clash between these two functions gives us our trade off and the U-shaped MSE graph : eventually the rate of increase of Var will surpass that of decrease of Bias, making the MSE go up again.\
+Since $f$ is inobserved, we can't really comupute test bias or var, but it's important to keep this trade-off in mind.
+
 
 Homework : find a intuitive 'proof'/reasoning on why bias decreases with flexibility while var increases.
 
@@ -83,3 +90,4 @@ We get : $ E[(f-\hat f)^2] + E(\epsilon ^2 ) - E(\epsilon)^2 = (f-\hat f)^2 + \t
 $=\text{Var}(\epsilon) + \text{E}[f(x_0) ^2 +\hat f(x_0)^2 - 2 f(x_0) \cdot \hat f(x_0)] = \text{Var}(\epsilon) + \text{E}(\hat f(x_0) ^2) - [\text{E}(\hat f(x_0)]^2 + [\text{E}(\hat f(x_0)]^2 + \text{E}[f(x_0) ^2 - 2 f(x_0) \cdot \hat f(x_0)]  $. (separating).\
 $= \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{E}(\hat f(x_0)]^2 + f(x_0) ^2 - 2 f(x_0) \text{E}[\hat f(x_0]] = \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0))  + [f-\text{E}(\hat f(x_0))]^2 $ which is through law of Bias :\
 $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
+- [^5] generally be closer to be precise, not always !
