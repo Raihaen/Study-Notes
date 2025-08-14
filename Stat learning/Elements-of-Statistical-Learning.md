@@ -84,7 +84,8 @@ We can prove that the best classifier, called the Bayes classifier, is basically
 A usual way of assessing the precision of a classification model is through the *error rate* : $\frac{1}{n} \sum I(y_i \not = \hat y_i)$\
 The Bayes error rate is theoretical minimum, equall to $1- \text{E}(\text{max}_j P(Y=j | X))$
 #### $K$-closest neighbors :
-This is a simple but very useful classifier, we assign to observation $x_0$ probability of being in class $C_i$ based on its closest $K$ neighbors's classes : $P_{i}(X_0)=\frac{}{K}$
+This is a simple but very useful classifier, we assign to observation $x_0$ probability of being in class $C_i$ based on its closest $K$ neighbors's classes : $P(Y=j | X = x_0)=\frac{\sum_{i \in \Nu_0} I(y_i = j)}{K}$ [^6]. /
+Despite its simplicity, KNN can produce classifiers very close to the optimal Bayes classifier.\
 We then explored how the bias-variance tradeoff manifests itself in classification (here flexibility is basically \frac{1}{K})
 
 
@@ -98,3 +99,4 @@ $=\text{Var}(\epsilon) + \text{E}[f(x_0) ^2 +\hat f(x_0)^2 - 2 f(x_0) \cdot \hat
 $= \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{E}(\hat f(x_0)]^2 + f(x_0) ^2 - 2 f(x_0) \text{E}[\hat f(x_0]] = \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0))  + [f-\text{E}(\hat f(x_0))]^2 $ which is through law of Bias :\
 $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^5] generally be closer to be precise, not always !
+- [^6] obv, it's $\leq 1-\frac{1}{c}$ where $c$ is the total number of classes.
