@@ -64,6 +64,7 @@ There is no perfect model, the best models differ depending on situations...
 We usually asses model accuracy using $\text{MSE}=\frac{1}{n} \sum (y_i-\hat f)^2$ (mean squared error).\
 Overfitting reffers specifically to the situation where a model with less degrees of freedom would've yielded better results. We always expect the testing accuracy to be less than the training accuracy since all models directly or indirectly try to minimize the training error.\
 The book presented an excellent example on training accuracy doesn't always translate to testing accuracy, by creating some data with a curve $f$ and some noise $\epsilon$ and showing how different models with increasing degrees of freedom created a U-shaped curve in test accuracy (although the training accuracy kept decreasing)[^3]. Like already mentionned, overfitting only reffers to models with higher DF than the model with minimal test accuracy./
+In real world applications, it's usually hard to estimate the test MSE (because there's usually no test data available), and so various methods were developped to try and estimate the minimum test accuracy point. One such method is Cross validation (this will be discussed later on).
 
 
 
