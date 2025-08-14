@@ -61,12 +61,14 @@ Some other SL methods (such as K-nearest neighbors or boosting) can be used for 
 ### Assessing model accuracy
 There is no perfect model, the best models differ depending on situations...
 #### Fitting the target
-We usually asses model accuracy using $\text{MSE}=\frac{1}{n} \sum (y_i-\hat f)^2$ (mean squared error).
--Overfitting reffers specifically to the situation where a model with less degrees of freedom would've yielded better results. We always expect the testing accuracy to be less than the training accuracy since all models directly or indirectly try to minimize the training error.
--Example to illustrate overfitting
+We usually asses model accuracy using $\text{MSE}=\frac{1}{n} \sum (y_i-\hat f)^2$ (mean squared error).\
+Overfitting reffers specifically to the situation where a model with less degrees of freedom would've yielded better results. We always expect the testing accuracy to be less than the training accuracy since all models directly or indirectly try to minimize the training error.\
+The book presented an excellent example on training accuracy doesn't always translate to testing accuracy, by showing different models with increasing degrees of freedom creating a U-shaped curve in test accuracy (although the training accuracy kept decreasing)[^3]. And so, overfitting only reffers to models with higher DF than the model with minimal test accuracy./
+
 
 
 # Footnotes :
 - [^1] -- free will ?.
 - [^2] -- proof : $E[{(Y- \hat Y)}^2] = E[(f + \epsilon - \hat f)^2] = E[f^2 + \hat f ^2 + \epsilon ^2 + 2 \epsilon (f-\hat f) - 2 (f \cdot \hat f)] = E[(f-\hat f)^2] + E(\epsilon ^2 ) + 2 E(\epsilon) \cdot E(f - \hat f)$. -- since $\epsilon$ is independent from both $f$ and $\hat f$.\
 We get : $ E[(f-\hat f)^2] + E(\epsilon ^2 ) - E(\epsilon)^2 = (f-\hat f)^2 + \text{Var}(\epsilon)$ since $E(\epsilon) = 0$ 
+- [^3] -- note that for a perfect $\hat f = f$, we will have $\text{MSE}= \text{Var}(\epsilon)$ as the theoretical lower bound on MSE; this is derived from the equation on [^2].\ Ofc this theoretical lower bound is usually unknown since we dont know the shape of $f$.
