@@ -84,7 +84,7 @@ We can prove that the best classifier, called the Bayes classifier, is basically
 A usual way of assessing the precision of a classification model is through the *error rate* : $\frac{1}{n} \sum I(y_i \not = \hat y_i)$. Where $I(a \not = b)$ is the indicator variable, its value is 1 if $a \not = b$, and 0 otherwise.\
 The Bayes error rate is theoretical minimum, equall to $1- \text{E}(\text{max}_j P(Y=j | X))$
 #### $K$-closest neighbors :
-This is a simple but very useful classifier, we assign to observation $x_0$ probability of being in class $j$ based on its closest $K$ neighbors's classes : $P(Y=j | X = x_0)=\frac{\sum_{i \in \Nu_0} I(y_i = j)}{K}$ [^6].\
+This is a simple but very useful classifier, we assign to observation $x_0$ probability of being in class $j$ based on its closest $K$ neighbors's classes : $P(Y=j | X = x_0)=\frac{\sum_{i \in N_0} I(y_i = j)}{K}$ [^6].\
 Despite its simplicity, KNN can produce classifiers very close to the optimal Bayes classifier.\
 We then explored how the bias-variance tradeoff manifests itself in classification (here flexibility is basically $\frac{1}{K}$)
 
