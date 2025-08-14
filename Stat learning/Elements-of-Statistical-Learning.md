@@ -66,6 +66,7 @@ Overfitting reffers specifically to the situation where a model with less degree
 The book presented an excellent example on training accuracy doesn't always translate to testing accuracy, by creating some data with a curve $f$ and some noise $\epsilon$ and showing how different models with increasing degrees of freedom created a U-shaped curve in test accuracy (although the training accuracy kept decreasing)[^3]. Like already mentionned, overfitting only reffers to models with higher DF than the model with minimal test accuracy.\
 In real world applications, it's usually hard to estimate the test MSE (because there's usually no test data available), and so various methods were developped to try and estimate the minimum test accuracy point. One such method is Cross validation (this will be discussed later on).
 
+Homework : find a intuitive 'proof'/reasoning on why bias decreases with flexibility while var increases.
 
 
 # Footnotes :
