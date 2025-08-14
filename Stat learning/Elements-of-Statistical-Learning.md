@@ -67,8 +67,9 @@ The book presented an excellent example on training accuracy doesn't always tran
 In real world applications, it's usually hard to estimate the test MSE (because there's usually no test data available), and so various methods were developped to try and estimate the minimum test accuracy point. One such method is Cross validation (this will be discussed later on).
 
 #### The Bias-Variance trade off
-Suppose we train a model on multiple datasets, creating multiple $\hat f$'s. We then apply each on some $x_0$. We have : 
-$\text{E}(y_0 - \hat f(x_0)) = \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2+ \text{Var}(\epsilon)$
+Suppose we train a model on multiple datasets, creating multiple $\hat f$'s. We then apply each on some $x_0$. We have :\
+$\text{E}[(y_0 - \hat f(x_0))^2] = \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2+ \text{Var}(\epsilon)$
+[^4].
 
 Homework : find a intuitive 'proof'/reasoning on why bias decreases with flexibility while var increases.
 
@@ -78,3 +79,4 @@ Homework : find a intuitive 'proof'/reasoning on why bias decreases with flexibi
 - [^2] -- proof : $E[{(Y- \hat Y)}^2] = E[(f + \epsilon - \hat f)^2] = E[f^2 + \hat f ^2 + \epsilon ^2 + 2 \epsilon (f-\hat f) - 2 (f \cdot \hat f)] = E[(f-\hat f)^2] + E(\epsilon ^2 ) + 2 E(\epsilon) \cdot E(f - \hat f)$. -- since $\epsilon$ is independent from both $f$ and $\hat f$.\
 We get : $ E[(f-\hat f)^2] + E(\epsilon ^2 ) - E(\epsilon)^2 = (f-\hat f)^2 + \text{Var}(\epsilon)$ since $E(\epsilon) = 0$ 
 - [^3] -- note that for a perfect $\hat f = f$, we will have $\text{MSE}= \text{Var}(\epsilon)$ as the theoretical lower bound on MSE; this is derived from the equation on [^2].\ Ofc this theoretical lower bound is usually unknown since we dont know the shape of $f$.
+- [^4] -- proof : $\text{E}(y_0 - \hat f(x_0)) = \text{E}[(f(x_0)-\hat f(x_0))^2] + \Var{\epsilon}$
