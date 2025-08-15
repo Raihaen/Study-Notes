@@ -105,6 +105,14 @@ Interestingly, a linear decision boundary (resulting from applying linear regres
 Continuing with scenario 2, let's explore KNN. A counter-intuitive fact is that although the number of parameters of KNN is K but the *effective* number of parameters is N/k.\
 To get an idea of why, not that if the neighborhoods were non-overlaping, we will be having N/k neighboorhoods (this is because each point will be part of K differenent [cause nonoverlaping] neighbourhoods, so to not double count, we need to divide the number of points by k to get the number of neighborhoods).
 
+#### From LR to KNN
+Most of the modern models use a variation of these two Here are a few ways of how that can be done : 
+- Kernel methods that give neighbours weights in smoothly descending order  (instead of the (0,1) weights of KNN).
+- Distance Kernels that give some features higher weights than the others (being closer on a dimension is better than on another).
+- Local regression fits the linear model to minimize a local version (locally weighted version) of RSS (instead of the constant one).
+- Some models use basis expansions of features to approximate non linear functions.
+- some models like *projection pursuit* and NNs use sums of non-linearly transformed linear models.
+
 
 # Footnotes :
 - [^1] -- free will ?.
