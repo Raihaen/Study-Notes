@@ -92,9 +92,12 @@ We then explored how the bias-variance tradeoff manifests itself in classificati
 Note that we will be using vector notation, so unless specified otherwise, assume vectors & matrices **(this expression needs reowking)**.
 ### Two simple approaches to Prediction : Least squares and KNN
 We start by deriving the optimal $\cap \beta$ formula. We have for $\text{RSS}$ (which is basically $n \cdot \text{MSE}$) : \
-$\text{RSS} = (y - X^T \beta)^T (y - X^T \beta)$, by deriving this with respect to $\beta$ :\
-$-X^T (y - X^T \beta) + (y - X^T \beta)^T (-X^T)$, since $a^T b = b^T a$ (for two column vectors $a,b$) then we get :/
-$-2X^T((y - X^T \beta))$
+$\text{RSS} = (y - X \beta)^T (y - X \beta)$, by deriving this with respect to $\beta$ :\
+$(-X d\beta)^T (y - X \beta) + (y - X \beta)^T (-X d\beta)$, since $a^T b = b^T a$ (for scalar $a^T b$) then we get :\
+$-2X^T((y - X \beta))$.\
+To calculate $\hat \beta$ that minimizes this quantity, we set it equal to zero : $X^T((y - X \beta)) = 0$, if $X^T X$ is *nonsingular* (has an inverese), we can do :\
+$(X^TX)^{-1} (X^T y - X^T X \beta) = 0$ Thus $(X^TX)^{-1} X^T y = \beta$
+
 
 # Footnotes :
 - [^1] -- free will ?.
