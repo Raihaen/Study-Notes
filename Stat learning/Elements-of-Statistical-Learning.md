@@ -110,4 +110,4 @@ $= \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{E}(\hat f(x_0)]^2 + 
 $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^5] generally be closer to be precise, not always !
 - [^6] obv, it's $\leq 1-\frac{1}{c}$ where $c$ is the total number of classes.
-- [^7] We defined this as $\cap \beta$ instead of just saying $\beta$ because we assumed $X^TX$ is non singular (to get a unique estimator).
+- [^7] We defined this as $\hat \beta$ instead of just saying $\beta$ because we assumed $X^TX$ is non singular (to get a unique estimator).
