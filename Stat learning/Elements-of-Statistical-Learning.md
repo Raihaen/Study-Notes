@@ -96,7 +96,7 @@ $\text{RSS} = (y - X \beta)^T (y - X \beta)$, by deriving this with respect to $
 $(-X d\beta)^T (y - X \beta) + (y - X \beta)^T (-X d\beta)$, since $a^T b = b^T a$ (for scalar $a^T b$) then we get :\
 $-2X^T((y - X \beta))$.\
 To calculate $\hat \beta$ that minimizes this quantity, we set it equal to zero : $X^T((y - X \beta)) = 0$, if $X^T X$ is *nonsingular* (has an inverese), we can do :\
-$(X^TX)^{-1} (X^T y - X^T X \beta) = 0$ Thus $(X^TX)^{-1} X^T y = \beta$
+$(X^TX)^{-1} (X^T y - X^T X \beta) = 0$ Thus $(X^TX)^{-1} X^T y = \cap \beta$ [^7]
 
 
 # Footnotes :
@@ -110,3 +110,4 @@ $= \text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{E}(\hat f(x_0)]^2 + 
 $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^5] generally be closer to be precise, not always !
 - [^6] obv, it's $\leq 1-\frac{1}{c}$ where $c$ is the total number of classes.
+- [^7] We defined this as $\cap \beta$ instead of just saying $\beta$ because we assumed $X^TX$ is non singular (to get a unique estimator).
