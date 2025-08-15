@@ -88,14 +88,6 @@ This is a simple but very useful classifier, we assign to observation $x_0$ prob
 Despite its simplicity, KNN can produce classifiers very close to the optimal Bayes classifier.\
 We then explored how the bias-variance tradeoff manifests itself in classification (here flexibility is basically $\frac{1}{K}$)
 
-### A bit of statistical decision theory
-Here we develop a small amount of theory to provide a framework/ reasoning for model developement.
-#### Quantitative targets :
-We start by setting a metric to assess a model's performance, one such famous metric is RSS :
-$\text{RSS}(y) = E[(y-f)^2]$
-Suppose that we know the probability of observing $P(y,x)$ then we can rewrite our equation as : 
-$\text{RSS}(y) = \int (y-f(x))\, P(dy, dx)$
-
 ## Chapter 2 [ESL]
 Note that we will be using vector notation, so unless specified otherwise, assume vectors & matrices **(this expression needs reowking)**.
 ### Two simple approaches to Prediction : Least squares and KNN
@@ -120,6 +112,20 @@ Most of the modern models use a variation of these two Here are a few ways of ho
 - Local regression fits the linear model to minimize a local version (locally weighted version) of RSS (instead of the constant one).
 - Some models use basis expansions of features to approximate non linear functions.
 - some models like *projection pursuit* and NNs use sums of non-linearly transformed linear models.
+
+### A bit of statistical decision theory
+Here we develop a small amount of theory to provide a framework/ reasoning for model developement.
+#### Quantitative targets :
+We start by setting a metric to assess a model's performance, one such famous metric is mean squared error. Our estimated prediction error is :
+$\text{EPE}(f) = E[(Y-f)^2]$\
+Suppose that we know the probability of observing $P(y,x)$ then we can rewrite our equation as : \
+$\text{EPE}(f) = \int (Y-f(x))\, P(dy, dx)$\
+We then condition on $X$ ($P(x,y)= P(x) \, P(y|x)$), this turns our integral into :\
+$\text{EPE}(f) = \int (\int (Y-f(x) \, P(dy|dx) \, P(dx))) = \text{E}_X(\text{E}_{Y|X}[(Y-f(x))^2]$ 
+
+
+
+
 
 
 # Footnotes :
