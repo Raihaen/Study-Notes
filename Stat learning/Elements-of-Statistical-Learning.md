@@ -100,7 +100,11 @@ To calculate $\hat \beta$ that minimizes this quantity, we set it equal to zero 
 $(X^TX)^{-1} (X^T y - X^T X \beta) = 0$ Thus $(X^TX)^{-1} X^T y = \hat \beta$ [^7]
 #### binary classification using linear regression
 This presents an idea on binary classification. Imagine 2 scenarios : in the first we generate data for each class through a Gaussian distribution; in the second, we generate for each class first a set of 10 values to serve as means for Gaussians with low var.\
-Interestingly, a linear decision boundary (resulting from applying linear regression) is the best we can do for scenario one [^8]. However, for the story is different for the second scenario, an optimal boundary would be nonlinear and disjoint.
+Interestingly, a linear decision boundary (resulting from applying linear regression) is the best we can do for scenario one [^8]. However, for the story is different for the second scenario, an optimal boundary would be nonlinear and disjoint.\
+#### KNN
+Continuing with scenario 2, let's explore KNN. A counter-intuitive fact is that although the number of parameters of KNN is K but the *effective* number of parameters is N/k.\
+To get an idea of why, not that if the neighborhoods were non-overlaping, we will be having N/k neighboorhoods (this is because each point will be part of K differenent [cause nonoverlaping] neighbourhoods, so to not double count, we need to divide the number of points by k to get the number of neighborhoods).
+
 
 # Footnotes :
 - [^1] -- free will ?.
