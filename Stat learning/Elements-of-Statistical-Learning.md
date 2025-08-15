@@ -91,13 +91,16 @@ We then explored how the bias-variance tradeoff manifests itself in classificati
 ## Chapter 2 [ESL]
 Note that we will be using vector notation, so unless specified otherwise, assume vectors & matrices **(this expression needs reowking)**.
 ### Two simple approaches to Prediction : Least squares and KNN
+#### RSS
 We start by deriving the optimal $\cap \beta$ formula. We have for $\text{RSS}$ (which is basically $n \cdot \text{MSE}$) : \
 $\text{RSS} = (y - X \beta)^T (y - X \beta)$, by deriving this with respect to $\beta$ :\
 $(-X d\beta)^T (y - X \beta) + (y - X \beta)^T (-X d\beta)$, since $a^T b = b^T a$ (for scalar $a^T b$) then we get :\
 $-2X^T((y - X \beta))$.\
 To calculate $\hat \beta$ that minimizes this quantity, we set it equal to zero : $X^T((y - X \beta)) = 0$, if $X^T X$ is *nonsingular* (has an inverese), we can do :\
 $(X^TX)^{-1} (X^T y - X^T X \beta) = 0$ Thus $(X^TX)^{-1} X^T y = \hat \beta$ [^7]
-
+#### binary classification using linear regression
+This presents an idea on binary classification. Imagine 2 scenarios : in the first we generate data for each class through a Gaussian distribution; in the second, we generate for each class first a set of 10 values to serve as means for Gaussians with low var.\
+Interestingly, a linear decision boundary (resulting from applying linear regression) is the best we can do for scenario one [^8]. However, for the story is different for the second scenario, an optimal boundary would be nonlinear and disjoint.
 
 # Footnotes :
 - [^1] -- free will ?.
@@ -111,3 +114,4 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^5] generally be closer to be precise, not always !
 - [^6] obv, it's $\leq 1-\frac{1}{c}$ where $c$ is the total number of classes.
 - [^7] We defined this as $\hat \beta$ instead of just saying $\beta$ because we assumed $X^TX$ is non singular (to get a unique estimator).
+- [^8]  Proof further down the book. I'm thinking of a geometrical proof using the radical axis (or just the perpendicular bisector of [AB], A and B being the means of the two guassian distributions).
