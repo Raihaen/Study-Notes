@@ -88,6 +88,13 @@ This is a simple but very useful classifier, we assign to observation $x_0$ prob
 Despite its simplicity, KNN can produce classifiers very close to the optimal Bayes classifier.\
 We then explored how the bias-variance tradeoff manifests itself in classification (here flexibility is basically $\frac{1}{K}$)
 
+## Chapter 2 [ESL]
+Note that we will be using vector notation, so unless specified otherwise, assume vectors & matrices **(this expression needs reowking)**.
+### Two simple approaches to Prediction : Least squares and KNN
+We start by deriving the optimal $\cap \beta$ formula. We have for $\text{RSS}$ (which is basically $n \cdot \text{MSE}$) : \
+$\text{RSS} = (y - X^T \beta)^T (y - X^T \beta)$, by deriving this with respect to $\beta$ :\
+$-X^T (y - X^T \beta) + (y - X^T \beta)^T (-X^T)$, since $a^T b = b^T a$ (for two column vectors $a,b$) then we get :/
+$-2X^T((y - X^T \beta))$
 
 # Footnotes :
 - [^1] -- free will ?.
