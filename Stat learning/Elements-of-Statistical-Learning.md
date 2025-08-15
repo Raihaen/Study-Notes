@@ -121,7 +121,7 @@ $\text{EPE}(f) = E[(Y-f)^2]$\
 Suppose that we know the probability of observing $P(y,x)$ then we can rewrite our equation as : \
 $\text{EPE}(f) = \int (Y-f(x))\, P(dy, dx)$\
 We then condition on $X$ ($P(x,y)= P(x) \, P(y|x)$), this turns our integral into :\
-$\text{EPE}(f) = \int (\int (Y-f(x) \, P(dy|dx) \, P(dx))) = \text{E}_X(\text{E}_{Y|X}[(Y-f(x))^2]$ 
+$\text{EPE}(f) = \int (\int (Y-f(x) \, P(dy|dx) \, P(dx)))= E_X(E_{Y|X}[(Y-f(x))^2]$ 
 
 
 
