@@ -155,7 +155,7 @@ And again, we can see that KNN is just an approximation of this classifier (same
 We now expand on a point we discussed : why not just use universal estimators like KNN ?\
 Well, the answer lies in the number of feature dimensions $p$, it's usually referred to as **the curse of dimensionality**.\
 This _curse_ has many layers, first notice that if data is repartitionned **uniformly** (maybe wrong word), then to cover $a$ percent of the data, one would need to cover $a^{\frac{1}{p}}$ of each feature's space, for p = 10 and a = 0.01 aka 1%, you would need to explore 63% of each.\
-Another idea is that, under 1-NN, the median distance to the closest point to the origin would be $(1-{\frac{1}{2}}^N)^{\frac{1}{p}}$; for a function like $f(x) = e^{-||X||}$, your estimate of the origin point will be very biased downward and RSS will be close to 1. Further more, most points in higher dimensions will be closer to edges of the space (try to calculate the probability of having a point with distance $a$ to the center)... \
+Another idea is that, under 1-NN, the median distance to the closest point to the origin would be $(1-{\frac{1}{2}}^{\frac{1}{p}})^{\frac{1}{N}}$; for a function like $f(x) = e^{-||X||}$, your estimate of the origin point will be very biased downward and RSS will be close to 1. Further more, most points in higher dimensions will be closer to edges of the space (try to calculate the probability of having a point with distance $a$ to the center)... \
 Lastly, consider that to get the same data density of a $N=100$ for p=1, you'd need $N=10^{20}$ !
 
 Let's now check how a linear model scales in higher dimensions :
