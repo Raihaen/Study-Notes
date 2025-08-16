@@ -165,11 +165,24 @@ We start like this [^11]: $\hat \beta = (X^T X)^{-1} XY = (X^T X)^{-1} X(X^T \be
 This yields $\hat y - y = (X^T X)^{-1} X \varepsilon$.\
 Calculating the EPE and dividing it into our usual components :
 $\text{EPE} = E_{x_0} E_{T}(y_0 - x_0^T \hat \beta)$ (Here $T$ represents the set of the testing samples).\
-$\text{EPE} = \text{Var}(y_0 | x_0) + \text{Bias}(\hat y_0) + \text{Var}_T(\hat y_0) \$ (our usual decomposition).\
+$\text{EPE(x_0)} = \text{Var}(y_0 | x_0) + \text{Bias}(\hat y_0)^2 + \text{Var}_T(\hat y_0) \$ (our usual decomposition).\
 Now we know $\hat y_0$ is unbiased, and that $\text{Var}(y_0 | x_0) = \sigma^2$ is a systematic error outside the scope of the model, we thus get :\
 $\text{EPE} =  \sigma^2 +  Var_T ( x_0^T \hat \beta)$\
 $\text{EPE} = \sigma^2 +  Var_T ( x_0^T (X^T X)^{-1} XY)$\
-$\text{EPE} = \sigma^2 +  Var_T ( x_0^T (X^T X)^{-1} X) \cdot \sigma^2$
+$\text{EPE} = \sigma^2 +  Var_T ( x_0^T (X^T X)^{-1} X) \cdot \sigma^2$ [^12].\
+This yields : 
+$\text{EPE} = \sigma^2 +  E_T x_0^T (X^T X)^{-1} x_0 \sigma^2$.\
+Now if $N$ is large enough and $T$ is selected at random, we can use the following approximation : $X^T X \approx N Cov(X)$. This gives us :   
+$\text{EPE} = \sigma^2 +  E_T x_0^T (N \cdot Cov(X))^{-1} x_0 \sigma^2$.\
+$\text{EPE} = \sigma^2 +  E_T x_0^T (Cov(X))^{-1} x_0 \frac{\sigma^2}{N}$.\
+Now since $x_0^T (Cov(X))^{-1} x_0$ we can use its trace and benefit from the trace properties :
+$E_{x_0} \text{EPE} = \sigma^2 +  E_{x_0} \text{Trace} (x_0^T (Cov(X))^{-1} x_0) \frac{\sigma^2}{N}$.\
+
+
+
+
+
+
 
 
 
@@ -190,3 +203,4 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^9] Learning this made me so happy, insights like these are the reason I didn't want to drop ESL for ISL.
 - [^10] When deriving, we get $E(X (Y - X^T \beta)) = E(XY) - E(X X^T \beta) = E(XY) - E(X X^T) \beta$, setting this to $0$ and solving for beta yields the desired result.
 - [^11] Reminder that $\hat \beta = (X^T X)^{-1} XY$ while $\beta = E(X^T X)^{-1} E(XY)$, this gives us a second proof on why the $\hat \beta$ estimator is unbiased (other than the one through the relation btween the two).
+- [^12] Will continue this proof later
