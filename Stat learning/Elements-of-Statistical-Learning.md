@@ -154,7 +154,7 @@ And again, we can see that KNN is just an approximation of this classifier (same
 ### Local methods in higher dimensions
 We now expand on a point we discussed : why not just use universal estimators like KNN ?\
 Well, the answer lies in the number of feature dimensions $p$, it's usually referred to as **the curse of dimensionality**.
-This _curse_ has many layers, first notice that if data is repartitionned **uniformly** (maybe wrong word), then to cover $a$ percent of the data, one would need to cover $a^{1\p}$ of the space
+This _curse_ has many layers, first notice that if data is repartitionned **uniformly** (maybe wrong word), then to cover $a$ percent of the data, one would need to cover $a^{\frac{1}{p}}$ of the space
 
 
 
