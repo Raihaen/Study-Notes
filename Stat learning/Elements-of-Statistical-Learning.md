@@ -160,7 +160,9 @@ For a function like $f(x) = e^{-8||X||^2}$, your estimate of any point will be v
 Lastly, consider that to get the same data density of a $N=100$ for p=1, you'd need $N=10^{20}$ !\
 In conclusion, if we want to use the nearest neighbor methods in higher dimensions with same accuracy as in lower dimensions, one would need the size of their training set to grow exponentially.
 
-Let's now check how a linear model scales in higher dimensions :
+Let's now check how a linear model scales in higher dimensions :\
+We start like this [^11]: $\hat \beta = (X^T X)^{-1} XY = (X^T X)^{-1} X(X^T \beta + \epsilon) = \beta + (X^T X)^{-1} X \epsilon$.\
+$y - \hat y = (X^T X)^{-1} X \epsilon$
 
 
 
@@ -179,3 +181,4 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^8]  Proof further down the book. I'm thinking of a geometrical proof using the radical axis (or just the perpendicular bisector of [AB], A and B being the means of the two guassian distributions).
 - [^9] Learning this made me so happy, insights like these are the reason I didn't want to drop ESL for ISL.
 - [^10] When deriving, we get $E(X (Y - X^T \beta)) = E(XY) - E(X X^T \beta) = E(XY) - E(X X^T) \beta$, setting this to $0$ and solving for beta yields the desired result.
+- [^11] Reminder that $\hat \beta = (X^T X)^{-1} XY$ while $\beta = E(X^T X)^{-1} E(XY)$
