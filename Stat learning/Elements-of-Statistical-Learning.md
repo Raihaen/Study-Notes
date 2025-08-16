@@ -172,7 +172,7 @@ $\text{EPE} = \sigma^2 +  Var_T ( x_0^T (X^T X)^{-1} XY)$\
 $\text{EPE} = \sigma^2 +  Var_T ( x_0^T (X^T X)^{-1} X) \cdot \sigma^2$ [^12].\
 This yields : 
 $\text{EPE} = \sigma^2 +  E_T x_0^T (X^T X)^{-1} x_0 \sigma^2$.\
-Now if $E(X)=0$, $N$ is large enough and $T$ is selected at random, we can use the following approximation : $X^T X \approx N Cov(X)$. This gives us :   
+Now if $E(X)=0$, $N$ is large enough and $T$ is selected at random, we can use the following approximation : $X^T X \approx N Cov(X)$ [^13]. This gives us :   
 $\text{EPE} = \sigma^2 +  E_T x_0^T (N \cdot Cov(X))^{-1} x_0 \sigma^2$.\
 $\text{EPE} = \sigma^2 +  E_T x_0^T (Cov(X))^{-1} x_0 \frac{\sigma^2}{N}$.\
 Now since $x_0^T (Cov(X))^{-1} x_0$ we can use its trace and benefit from the trace properties :\
@@ -215,3 +215,4 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^10] When deriving, we get $E(X (Y - X^T \beta)) = E(XY) - E(X X^T \beta) = E(XY) - E(X X^T) \beta$, setting this to $0$ and solving for beta yields the desired result.
 - [^11] Reminder that $\hat \beta = (X^T X)^{-1} XY$ while $\beta = E(X^T X)^{-1} E(XY)$, this gives us a second proof on why the $\hat \beta$ estimator is unbiased (other than the one through the relation btween the two).
 - [^12] Will continue this proof later
+- [^13] idem
