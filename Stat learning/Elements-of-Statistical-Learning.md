@@ -162,7 +162,7 @@ In conclusion, if we want to use the nearest neighbor methods in higher dimensio
 
 Let's now check how a linear model scales in higher dimensions :\
 We start like this [^11]: $\hat \beta = (X^T X)^{-1} XY = (X^T X)^{-1} X(X^T \beta + \epsilon) = \beta + (X^T X)^{-1} X \epsilon$.\
-$y - \hat y = (X^T X)^{-1} X \epsilon$
+$\hat y - y = (X^T X)^{-1} X \epsilon$
 
 
 
