@@ -150,8 +150,6 @@ $G(X) = \text{argmin}_g (\sum_{G_i \not = g} P(G_i|X=x))$ or just a plain $G(X) 
 Seems familiar ? It's the Bias classifier !\ 
 And again, we can see that KNN is just an approximation of this classifier (same as previously discussed).
 
-\ this leads us to the Bayes estimator.
-We then talk about how KNN is just an estimation of this bayes estimator (with 2 approximations), and that both MSE and KNN are approximations of the same concept.
 
 
 
