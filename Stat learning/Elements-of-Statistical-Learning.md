@@ -126,10 +126,17 @@ Since means that to optimize $f$ it suffices to optimize it locally (for each $x
 We write : $f(x) = \text{argmin} ._c (E[(Y-c)^2] | X=x)$
 Deriving and setting to zero to minimize it gives us : \
 $0 = 2 E(Y-f(x)| X=x) \Rightarrow f(x) = E(Y | X=x)$. The best estimator for $f$ is the conditional mean.\
-Now since we can't get this mean (as we can only do one observation per $x$), we can use an approximation : $\hat f(x) = \text{Avg}(y_i ; i \in N_k)$, $N_k$ being the region around $x$ containing $k$ points. Note that two approximations were used here -- we approximated $E(Y)$ using an average, and $x$ using a region surrounding it.\
+
+Now since we can't get this mean (as we can only do one observation per $x$), we can use an approximation (the universal approximator) : $\hat f(x) = \text{Avg}(y_i ; i \in N_k)$, $N_k$ being the region around $x$ containing $k$ points. Note that two approximations were used here -- we approximated $E(Y)$ using an average, and $x$ using a region surrounding it.\
+As $N$ grows, this quantity conveges to $E(y)$. The question waiting to be asked is, since we have a universal approximator why not just use and be done with it ? Well, for 3 reasons : we often do not have a large enough $N$, furthermore, if a structured model is available, we will get a far more stable result with the same $N$, and finally, as $p$'s dimension gets larger, (the quantity still converges but) the rate of conversion decreases a lot (for large $p$, the $N$ necessary for a good enough approx is huge).
+  
 Another interesting note is that by changing our EPE function, say for example to $|y-c|$, the optimal approximation would become $\hat f(x) = \text{Med}(y_i ; i \in N_x)$, the median of $y$s in that region. This approximator gives better results than the average but is less used to to **its derivations not being connected** (check the orthograph).\
-Lastly, let's talk about what happens when we try to model $f$ as linear; what we are doing is basically considering $f(x) \approx x^T \beta$, applying this to our initial EPE equation and deriving leads to : 
-$ f(x) = E((X^TX)^{-1}) E(X^T Y)$. What we are doing by applying this to the train dataset is just trying to approximate this quantity [^9].
+
+Lastly, let's talk about what happens when we try to model $f$ as linear; what we are doing is basically considering $f(x) \approx x^T \beta$, applying this to our initial EPE equation and deriving (in a similar way to what we did deriving RSS at the start of the chapter) leads to : 
+$ f(x) = E((XX^T))^{-1} E(X Y)$. What we are doing by applying this to the train dataset is just trying to approximate this quantity [^9].\
+Notice that the difference between this derivation and the one before it (for EPE), is that we didn't use conditional probability but our knowledge of the functional relationship to pool over values of X.
+
+In conclusion, KNN and least squares solution are both approximating conditional expectations by average, BUT, this is done in 2 different ways : least squares assumes $f$ is <u> well approximated <\u> globaly by a linear function
 
 #### Qualitative response :
 We define our loss function, and our EPE (then treat the case of Index EPE), this leads us to the Bayes estimator.
