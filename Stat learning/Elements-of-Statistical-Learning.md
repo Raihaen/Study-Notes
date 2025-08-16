@@ -175,7 +175,7 @@ $\text{EPE} = \sigma^2 +  E_T x_0^T (X^T X)^{-1} x_0 \sigma^2$.\
 Now if $N$ is large enough and $T$ is selected at random, we can use the following approximation : $X^T X \approx N Cov(X)$. This gives us :   
 $\text{EPE} = \sigma^2 +  E_T x_0^T (N \cdot Cov(X))^{-1} x_0 \sigma^2$.\
 $\text{EPE} = \sigma^2 +  E_T x_0^T (Cov(X))^{-1} x_0 \frac{\sigma^2}{N}$.\
-Now since $x_0^T (Cov(X))^{-1} x_0$ we can use its trace and benefit from the trace properties :
+Now since $x_0^T (Cov(X))^{-1} x_0$ we can use its trace and benefit from the trace properties :\
 $E_{x_0} \text{EPE} = \sigma^2 +  E_{x_0} \text{Trace} (x_0^T (Cov(X))^{-1} x_0) \frac{\sigma^2}{N}$.\
 
 
