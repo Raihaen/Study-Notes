@@ -164,7 +164,8 @@ Let's now check how a linear model scales in higher dimensions :\
 We start like this [^11]: $\hat \beta = (X^T X)^{-1} XY = (X^T X)^{-1} X(X^T \beta + \epsilon) = \beta + (X^T X)^{-1} X \varepsilon$.\
 This yields $\hat y - y = (X^T X)^{-1} X \varepsilon$.\
 Calculating the EPE and dividing it into our usual components :
-$\text{EPE} = E_{x_0} E_{T}(y_0 - x_0^T \hat \beta)$ (Here $T$ represents the set of the testing samples.)
+$\text{EPE} = E_{x_0} E_{T}(y_0 - x_0^T \hat \beta)$ (Here $T$ represents the set of the testing samples).\
+$\text{EPE} = \var ()$
 
 
 
