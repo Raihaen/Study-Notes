@@ -142,9 +142,13 @@ The flexibility of the latter has a price like we mentionned.\
 Many models follow in these two's footsteps (we were given the example of additive models that divide the function into the sum of one dimensional arbitrary functions)
 
 #### Qualitative response :
-We define our loss function in the same way, and our EPE. usually L where $L(g_k, g_i)$ is the price you pay for mislabeling $g_k$ as $g_i$ -- if you just consider a constant price of 1 for all mislabelings you end up with the Index loss function.\
-Now proceeding like with quantitative responses, we start with $\text{EPE} = E[L(G, \hat G(X))]$, and the use conditional probability to prove it suffices to optimize locally and end up with :\
-$G(X) = \text{argmin}_g (\sum L(G_i, g)*P(G_i|X=x))$
+We define our loss function in the same way, and our EPE. usually L where $L(g_k, g_i)$ is the price you pay for mislabeling $g_k$ as $g_i$ -- if you just consider a constant price of 1 for all mislabelings you end up with the zero-one loss function.\
+Now proceeding like with quantitative responses, we start with $\text{EPE} = E[L(G, \hat G(X))]$, and the use conditional probability to prove it suffices to optimize locally and end up with :
+$G(X) = \text{argmin}_g (\sum L(G_i, g)*P(G_i|X=x))$.\
+Now if we use the zero-one loss function, this turns into 
+$G(X) = \text{argmin}_g (\sum_{G_i \not = g} P(G_i|X=x))$ or just a plain $G(X) = \text{argmax}_g (P(g|X=x)).\
+Seems familiar ? It's the Bias classifier !\ 
+And again, we can see that KNN is just an approximation of this classifier (same as previously discussed).
 
 \ this leads us to the Bayes estimator.
 We then talk about how KNN is just an estimation of this bayes estimator (with 2 approximations), and that both MSE and KNN are approximations of the same concept.
