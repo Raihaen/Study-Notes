@@ -172,14 +172,14 @@ $\text{EPE} = \sigma^2 +  Var_T ( x_0^T (X^T X)^{-1} XY)$\
 $\text{EPE} = \sigma^2 +  Var_T ( x_0^T (X^T X)^{-1} X) \cdot \sigma^2$ [^12].\
 This yields : 
 $\text{EPE} = \sigma^2 +  E_T x_0^T (X^T X)^{-1} x_0 \sigma^2$.\
-Now if $N$ is large enough and $T$ is selected at random, we can use the following approximation : $X^T X \approx N Cov(X)$. This gives us :   
+Now if $E(X)=0$, $N$ is large enough and $T$ is selected at random, we can use the following approximation : $X^T X \approx N Cov(X)$. This gives us :   
 $\text{EPE} = \sigma^2 +  E_T x_0^T (N \cdot Cov(X))^{-1} x_0 \sigma^2$.\
 $\text{EPE} = \sigma^2 +  E_T x_0^T (Cov(X))^{-1} x_0 \frac{\sigma^2}{N}$.\
 Now since $x_0^T (Cov(X))^{-1} x_0$ we can use its trace and benefit from the trace properties :\
 $E_{x_0} \text{EPE}(x_0) = \sigma^2 +  E_{x_0} \text{Trace} (x_0^T (Cov(X))^{-1} x_0) \frac{\sigma^2}{N}$.\
 Since Trace is cyclic, we can do : $E_{x_0} \text{Trace} (x_0^T (Cov(X))^{-1} x_0)$ equals $E_{x_0} \text{Trace} (x_0 x_0^T (Cov(X))^{-1})$.\
 We move the Trace in, getting : $ \text{Trace} E_{x_0}(x_0 x_0^T (Cov(X))^{-1})$. We then separate (Cov(X) is a constant) getting : $ \text{Trace} (E_{x_0}(x_0 x_0^T)Cov(X))^{-1})$.\
-If we assume that $E(X) = 0$, (aka $E(x_{0j}) = 0$ for all $j$), and since $x_0 x_0^T$ is a matrix of the form {$x_{0i} \cdot x_{0j}$} for all $i,j$, we can consider it of the form : {$[x_{0i} - E(x_{0i})] \cdot [x_{0j} - E(x_{0j})]$}, this makes $E_{x_0}(x_{0i} x_{0j}) = E([x_{0i} - E(x_{0i})] \cdot [x_{0j} - E(x_{0j})])$the def of $Cov(x_{0i} , x_{0j})$.\
+Now since $E(X) = 0$, (aka $E(x_{0j}) = 0$ for all $j$), and since $x_0 x_0^T$ is a matrix of the form {$x_{0i} \cdot x_{0j}$} for all $i,j$, we can consider it of the form : {$[x_{0i} - E(x_{0i})] \cdot [x_{0j} - E(x_{0j})]$}, this makes $E_{x_0}(x_{0i} x_{0j}) = E([x_{0i} - E(x_{0i})] \cdot [x_{0j} - E(x_{0j})])$the def of $Cov(x_{0i} , x_{0j})$.\
 We thus can do : $E_{x_0}(x_0 x_0^T)$ = Cov(X)$, making our equation :\
 $E_{x_0} \text{EPE}(x_0) = \sigma^2 +  \text{Trace} (Cov(X)Cov(X)^{-1}) \frac{\sigma^2}{N}$.\
 Making our quantity finally : $E_{x_0} \text{EPE}(x_0) = \sigma^2 + \frac{p}{N} \sigma^2$.\
