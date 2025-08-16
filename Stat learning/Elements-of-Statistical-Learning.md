@@ -126,7 +126,7 @@ Since means that to optimize $f$ it suffices to optimize it locally (for each $x
 We write : $f(x) = \text{argmin} ._c (E[(Y-c)^2] | X=x)$
 Deriving and setting to zero to minimize it gives us : \
 $0 = 2 E(Y-f(x)| X=x) \Rightarrow f(x) = E(Y | X=x)$. The best estimator for $f$ is the conditional mean.\
-Now since we can't get this mean (as we can only do one observation per $x$), we can use an approximation : $\hat f(x) = \text{Avg}(y_i ; i \in N_k)$, $N_k$ being the region around $x$ containing $k$ points.\
+Now since we can't get this mean (as we can only do one observation per $x$), we can use an approximation : $\hat f(x) = \text{Avg}(y_i ; i \in N_k)$, $N_k$ being the region around $x$ containing $k$ points. Note that two approximations were used here -- we approximated $E(Y)$ using an average, and $x$ using a region surrounding it.\
 Another interesting note is that by changing our EPE function, say for example to $|y-c|$, the optimal approximation would become $\hat f(x) = \text{Med}(y_i ; i \in N_x)$, the median of $y$s in that region. This approximator gives better results than the average but is less used to to **its derivations not being connected** (check the orthograph).\
 Lastly, let's talk about what happens when we try to model $f$ as linear; what we are doing is basically considering $f(x) \approx x^T \beta$, applying this to our initial EPE equation and deriving leads to : 
 $ f(x) = E((X^TX)^{-1}) E(X^T Y)$. What we are doing by applying this to the train dataset is just trying to approximate this quantity [^9].
