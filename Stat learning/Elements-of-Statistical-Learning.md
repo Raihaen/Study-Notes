@@ -136,10 +136,17 @@ Lastly, let's talk about what happens when we try to model $f$ as linear; what w
 $ f(x) = E((XX^T))^{-1} E(X Y)$. What we are doing by applying this to the train dataset is just trying to approximate this quantity [^9].\
 Notice that the difference between this derivation and the one before it (for EPE), is that we didn't use conditional probability but our knowledge of the functional relationship to pool over values of X.
 
-In conclusion, KNN and least squares solution are both approximating conditional expectations by average, BUT, this is done in 2 different ways : least squares assumes $f$ is <u> well approximated <\u> globaly by a linear function
+In conclusion, KNN and least squares solution are both approximating conditional expectations by average, BUT, this is done in 2 different ways : least squares assumes $f$ is <u> well approximated </u> globaly by a **globaly linear function**; while on the other side KNN assumes that $f$ is well approximated by a **constant function** locally.\
+The flexibility of the latter has a price like we mentionned.\
+
+Many models follow in these two's footsteps (we were given the example of additive models that divide the function into the sum of one dimensional arbitrary functions)
 
 #### Qualitative response :
-We define our loss function, and our EPE (then treat the case of Index EPE), this leads us to the Bayes estimator.
+We define our loss function in the same way, and our EPE. usually L where $L(g_k, g_i)$ is the price you pay for mislabeling $g_k$ as $g_i$ -- if you just consider a constant price of 1 for all mislabelings you end up with the Index loss function.\
+Now proceeding like with quantitative responses, we start with $\text{EPE} = E[L(G, \hat G(X))]$, and the use conditional probability to prove it suffices to optimize locally and end up with :\
+$G(X) = \text{minarg} \._g (\sum L(G_i, g)*P(G_i|X=x))$
+
+\ this leads us to the Bayes estimator.
 We then talk about how KNN is just an estimation of this bayes estimator (with 2 approximations), and that both MSE and KNN are approximations of the same concept.
 
 
