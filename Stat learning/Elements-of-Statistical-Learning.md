@@ -132,7 +132,7 @@ As $N$ grows, this quantity conveges to $E(y)$. The question waiting to be asked
   
 Another interesting note is that by changing our EPE function, say for example to $|y-c|$, the optimal approximation would become $\hat f(x) = \text{Med}(y_i ; i \in N_x)$, the median of $y$s in that region. This approximator gives better results than the average but is less used to to **its derivations not being connected** (check the orthograph).\
 
-Lastly, let's talk about what happens when we try to model $f$ as linear; what we are doing is basically considering $f(x) \approx x^T \beta$, applying this to our initial EPE equation and deriving (in a similar way to what we did deriving RSS at the start of the chapter) leads to : 
+Lastly, let's talk about what happens when we try to model $f$ as linear; what we are doing is basically considering $f(x) \approx x^T \beta$, applying this to our initial EPE equation and deriving (in a similar way to what we did deriving RSS at the start of the chapter)[^10] leads to : 
 $ f(x) = E((XX^T))^{-1} E(X Y)$. What we are doing by applying this to the train dataset is just trying to approximate this quantity [^9].\
 Notice that the difference between this derivation and the one before it (for EPE), is that we didn't use conditional probability but our knowledge of the functional relationship to pool over values of X.
 
@@ -170,3 +170,4 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^7] We defined this as $\hat \beta$ instead of just saying $\beta$ because we assumed $X^TX$ is non singular (to get a unique estimator).
 - [^8]  Proof further down the book. I'm thinking of a geometrical proof using the radical axis (or just the perpendicular bisector of [AB], A and B being the means of the two guassian distributions).
 - [^9] Learning this made me so happy, insights like these are the reason I didn't want to drop ESL for ISL.
+- [^10] When deriving, we get $E(X (Y - X^T \beta)) = E(XY) - E(X X^T \beta) = E(XY) - E(X X^T) \beta$, setting this to $0$ and solving for beta yields the desired result.
