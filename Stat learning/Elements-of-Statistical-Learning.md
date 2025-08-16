@@ -137,7 +137,7 @@ $ f(x) = E((XX^T))^{-1} E(X Y)$. What we are doing by applying this to the train
 Notice that the difference between this derivation and the one before it (for EPE), is that we didn't use conditional probability but our knowledge of the functional relationship to pool over values of X.
 
 In conclusion, KNN and least squares solution are both approximating conditional expectations by average, BUT, this is done in 2 different ways : least squares assumes $f$ is <u> well approximated </u> globaly by a **globaly linear function**; while on the other side KNN assumes that $f$ is well approximated by a **constant function** locally.\
-The flexibility of the latter has a price like we mentionned.\
+The flexibility of the latter has a price like we mentionned.
 
 Many models follow in these two's footsteps (we were given the example of additive models that divide the function into the sum of one dimensional arbitrary functions)
 
@@ -151,8 +151,10 @@ or just a plain $G(X) = \text{argmax}_g (P(g|X=x))$.
 Seems familiar ? It's the Bias classifier ! \ 
 And again, we can see that KNN is just an approximation of this classifier (same as previously discussed).
 
-
-
+### Local methods in higher dimensions
+We now expand on a point we discussed : why not just use universal estimators like KNN ?\
+Well, the answer lies in the number of feature dimensions $p$, it's usually referred to as **the curse of dimensionality**.
+This _curse_ has many layers, first notice that if data is repartitionned **uniformly** (maybe wrong word), then to cover $a$ percent of the data, one would need to cover $a^{1\p}$ of the space
 
 
 
