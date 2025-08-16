@@ -215,4 +215,4 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^10] When deriving, we get $E(X (Y - X^T \beta)) = E(XY) - E(X X^T \beta) = E(XY) - E(X X^T) \beta$, setting this to $0$ and solving for beta yields the desired result.
 - [^11] Reminder that $\hat \beta = (X^T X)^{-1} XY$ while $\beta = E(X^T X)^{-1} E(XY)$, this gives us a second proof on why the $\hat \beta$ estimator is unbiased (other than the one through the relation btween the two).
 - [^12] Will continue this proof later
-- [^13] idem
+- [^13] the idea will be explained when dealing with $x_0 x_0^T$ but basically $E(X^T X)$ = { $\sum_{k = 1}^N x_{ki} x_{kj}$ } 
