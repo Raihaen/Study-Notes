@@ -161,8 +161,8 @@ Lastly, consider that to get the same data density of a $N=100$ for p=1, you'd n
 In conclusion, if we want to use the nearest neighbor methods in higher dimensions with same accuracy as in lower dimensions, one would need the size of their training set to grow exponentially.
 
 Let's now check how a linear model scales in higher dimensions :\
-We start like this [^11]: $\hat \beta = (X^T X)^{-1} XY = (X^T X)^{-1} X(X^T \beta + \epsilon) = \beta + (X^T X)^{-1} X \epsilon$.\
-$\hat y - y = (X^T X)^{-1} X \epsilon$
+We start like this [^11]: $\hat \beta = (X^T X)^{-1} XY = (X^T X)^{-1} X(X^T \beta + \epsilon) = \beta + (X^T X)^{-1} X \varepsilon$.\
+$\hat y - y = (X^T X)^{-1} X \varepsilon$
 
 
 
