@@ -125,12 +125,13 @@ $\text{EPE}(f) = \int (\int (Y-f(x) \, P(dy|dx) \, P(dx)))= E_X(E_{Y|X}[(Y-f(x))
 Since means that to optimize $f$ it suffices to optimize it locally (for each $x$) -- since the $E_X$ means each point is treated locally.\
 We write : $f(x) = \text{argmin} ._c (E[(Y-c)^2] | X=x)$
 Deriving and setting to zero to minimize it gives us : \
-$0 = 2 E(Y-f(x)| X=x) \Rightarrow f(x) = E(Y | X=x)$.\
-- We then talk about the case where we assume the rel is linear.
-- A key result we get is that  
+$0 = 2 E(Y-f(x)| X=x) \Rightarrow f(x) = E(Y | X=x)$. The best estimator for $f$ is the conditional mean.\
+Now since we can't get this mean (as we can only do one observation per $x$), we can use an approximation : $\hat f(x) = \text{Avg}(y_i ; i \in N_x)$, $N_x$ being a defined region around $x$.\
+Another interesting note is that by changing our EPE function, say for example to $|y-c|$, the optimal approximation would become $\hat f(x) = \text{Med}(y_i ; i \in N_x)$, the median of $y$s in that region. This approximator gives better results than the average but is less used to to **its derivations not being connected** (check the orthograph).
+Lastly, let's talk about what happens when we try to model $f$ as linear; what we are doing is basically considering $f(x) \approx x^T \beta$
 #### Qualitative response :
 We define our loss function, and our EPE (then treat the case of Index EPE), this leads us to the Bayes estimator.
-
+We then talk about how KNN is just an estimation of this bayes estimator (with 2 approximations), and that both MSE and KNN are approximations of the same concept.
 
 
 
