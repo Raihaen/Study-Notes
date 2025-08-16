@@ -177,7 +177,7 @@ $\text{EPE} = \sigma^2 +  E_T x_0^T (N \cdot Cov(X))^{-1} x_0 \sigma^2$.\
 $\text{EPE} = \sigma^2 +  E_T x_0^T (Cov(X))^{-1} x_0 \frac{\sigma^2}{N}$.\
 Now since $x_0^T (Cov(X))^{-1} x_0$ we can use its trace and benefit from the trace properties :\
 $E_{x_0} \text{EPE}(x_0) = \sigma^2 +  E_{x_0} \text{Trace} (x_0^T (Cov(X))^{-1} x_0) \frac{\sigma^2}{N}$.\
-Since Trace is cyclic, we can do : $E_{x_0} \text{Trace} (x_0^T (Cov(X))^{-1} x_0)$ equals E_{x_0} \text{Trace} (x_0 x_0^T (Cov(X))^{-1})
+Since Trace is cyclic, we can do : $E_{x_0} \text{Trace} (x_0^T (Cov(X))^{-1} x_0)$ equals $E_{x_0} \text{Trace} (x_0 x_0^T (Cov(X))^{-1})$
 
 
 
