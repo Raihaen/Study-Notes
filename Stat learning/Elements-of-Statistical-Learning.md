@@ -145,7 +145,7 @@ Many models follow in these two's footsteps (we were given the example of additi
 We define our loss function in the same way, and our EPE. usually L where $L(g_k, g_i)$ is the price you pay for mislabeling $g_k$ as $g_i$ -- if you just consider a constant price of 1 for all mislabelings you end up with the zero-one loss function.\
 Now proceeding like with quantitative responses, we start with $\text{EPE} = E[L(G, \hat G(X))]$, and the use conditional probability to prove it suffices to optimize locally and end up with :
 $G(X) = \text{argmin}_g (\sum L(G_i, g) \cdot P(G_i|X=x))$.\
-Now if we use the zero-one loss function, this turns into $ G(X) = \text{argmin}_g (\sum_{G_i \not = g} P(G_i|X=x))$
+Now if we use the zero-one loss function, this turns into $G(X) = \arg\min_g \; \sum_{G_i \neq g} P(G_i \mid X = x)$
 
 or just a plain $G(X) = \text{argmax}_g (P(g|X=x))$.
 Seems familiar ? It's the Bias classifier ! \ 
