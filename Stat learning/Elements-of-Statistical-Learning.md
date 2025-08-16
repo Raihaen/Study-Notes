@@ -179,7 +179,7 @@ Now since $x_0^T (Cov(X))^{-1} x_0$ we can use its trace and benefit from the tr
 $E_{x_0} \text{EPE}(x_0) = \sigma^2 +  E_{x_0} \text{Trace} (x_0^T (Cov(X))^{-1} x_0) \frac{\sigma^2}{N}$.\
 Since Trace is cyclic, we can do : $E_{x_0} \text{Trace} (x_0^T (Cov(X))^{-1} x_0)$ equals $E_{x_0} \text{Trace} (x_0 x_0^T (Cov(X))^{-1})$.\
 We move the Trace in, getting : $ \text{Trace} E_{x_0}(x_0 x_0^T (Cov(X))^{-1})$. We then separate (Cov(X) is a constant) getting : $ \text{Trace} (E_{x_0}(x_0 x_0^T)Cov(X))^{-1})$.\
-If we assume that for each dimension's data is centreted at 0 (aka $E(x_{0j}) = 0$ for all $j$), then we can do the following trick : 
+If we assume that for each dimension's data is centreted at 0 (aka $E(x_{0j}) = 0$ for all $j$), and since $x_0 x_0^T$ is a matrix of the form {$x_{0i} \cdot x_{0j}$} for all $i,j$.
 
 
 
