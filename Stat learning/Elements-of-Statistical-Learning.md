@@ -183,6 +183,7 @@ If we assume that $E(X) = 0$, (aka $E(x_{0j}) = 0$ for all $j$), and since $x_0 
 We thus can do : $E_{x_0}(x_0 x_0^T)$ = Cov(X)$, making our equation :\
 $E_{x_0} \text{EPE}(x_0) = \sigma^2 +  \text{Trace} (Cov(X)Cov(X)^{-1}) \frac{\sigma^2}{N}$.\
 Making our quantity finally : $E_{x_0} \text{EPE}(x_0) = \sigma^2 + \frac{p}{N} \sigma^2$.\
+
 As we can see, it grows linearly with p/N, if N is large (or $\sigma ^2 $) is small, the variable term is negligible...\
 This captures the power of models : by imposing some heavy restrictions on the class of models being fitted (as in, only considering linear models), we escaped the curse of dimensionality ! (avoiding the exponential growth in complexity of functions in higher dimensions).
 
