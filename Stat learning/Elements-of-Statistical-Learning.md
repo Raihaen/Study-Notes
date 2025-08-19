@@ -219,6 +219,34 @@ We then model our Pr(y_i). Using for example $P(y_i) = N(f_\theta (x), \sigma^2)
 One counter intuitive fact is that, although the model we defined for $P(\theta)$ here is actually equivalent to $y = f(x) + \epsilon$ with $\epsilon$ having a **normal distribution** (while no distribution was imposed when doing RSS), this additional assumption doesn't change anything about the result at all. (again to not get lost, here we expanded a bit more on criterions we can use to pick $\theta$s -aka parameters- for our models).
 
 ### Structured Regression Models
+We will now discuss structured approaches, and (first) why they are needed :
+
+#### Difficulty of the problem : 
+Let's consider our least square constraint and our additive error model : $RSS(f)= \sum^N (y_i - f(x_i))^2$.\
+Minimizing this quantity leads to infinitely many solutions... In fact, and function passing through all the points in $T$ [^16] is a solution. \
+
+And so, out solution choice might end up being a poor predictor... It thus becomes apparent that we need to restrict our search domain (and eligible solutions). How we decide on those restrictions is based on considerations outside of the data (expert opinion, prior knowledge, assumptions etc)./
+These assumptions are sometimes encoded via the parametric representation of $f_\theta$, and sometimes ecoded in the method of learning itself.
+
+In general, constraints imposed by most learning methods are considered **complexity** constraints, one way or another. Usually, this translates to some kind of regular behavior in small neighborhoods of the input (ex: considering a nearly-constant / linear / polynomial / ect restriction in small neighborhoods - we then use averaging and/or fitting).\
+The strength of tese constrains is directed by the neighborhood size in which we enforce them, the bigger the stronger (think of KNN's behavior in function of k / local vs general linear models).\
+The nature of the constraints depend on the metric used : kernels, local regression, trees etc directly specify the size and metric of the neighborhood, while other ones such as RNN implicitely define them.\
+
+Finally, we should remind ourselves that the smaller the method's neighborhood, the more problems it will run into in higher dimensions. All methods that overcome the curse of dimensionality have metrics (explicit or implicit) that do not allow a neighborhood to be small in all directions.
+
+### Classes of restriced estimators :
+We now discuss these classes of methods, note that they are not distinct, and so some methods may fall in several classes. Each one has one or more _smoothing_ parameters, they control the effective size of the neighborhoods.
+
+#### Roughness penalty and Bayesian Methods
+$PRSS(f,\lambda)= \sum (y-f(x))^2 + \lambda J(f)$
+We (explicitely) penalize functions that vary too rapidely over small regions (a manifestation of overfit). For example the cubic smoothing spline is of the the solution of : $PRSS(f,\lambda) = \sum (y-f(x))^2 + \lambda \int [f''(x)]^2 dx$.
+The roughness penalty controles large values of the second derivative while $\lambda$ (smoothing parameter) controls the amount of penalty (think from $0$ to $\infty$).
+
+
+#### Kernel methods and local regression
+
+#### Basis functions and Dictionary methods
+
 
 
 
@@ -242,3 +270,4 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^13] the idea will be explained when dealing with $x_0 x_0^T$ but basically calculate $E(X^T X)$, where $X^T X$ = { $\sum_{k = 1}^N x_{ki} x_{kj}$ }, and $x_{ki} = x_{ki} - E(x_{ki})$, creating the formula for coviariance multiplied by $N$ : $cov(a,b) = \frac{\sum [a_i-E(a_i)] [b_i - E(b_i)]}{n}$
 - [^14] To not get lost, just rmemeber that this is simply an example of other approximation models.
 - [^15] very simple proof, just replace with the formula for normal distribution. Remember that the criterions (Max Likelihood / Least squares etc) we use are applied ON $T$ and not the whole space X.
+- [^16] If our $T$ contains multiple observations for each $x$, then our function would pass through the average values of $y_i$, and all solutions would tend to the limiting conditional expectation with large $T$ (again containing multiple observations per $x$).
