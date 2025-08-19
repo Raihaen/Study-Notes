@@ -196,12 +196,25 @@ We can use other classes of models for $f(x)$ depending on the situation, we wil
 
 #### A statistical model for joint distribution
 Let's start with our initial presented model : $Y = f(X) + \varepsilon$, we assumed that all unmeasured variables and measurement is captured in a single variable $\varepsilon$ **independent** of $X$, but that is not always necessarily the case.\
-We can modify our example, for example, to include the case where our error variable can be dependent on $X$ : $\text{Var}(\epsilon | X) = \sigma(X)^2$
+We can modify our example, for example, to include the case where our error variable can be dependent on $X$ : $\text{Var}(Y | X=x) = \sigma(X)$.\
+In this new model, both the mean and the variance depend on $X$ (prev one was just the mean).\
+$Pr(Y|X)$ can depend on $X$ in complicated ways but these aren't possible in the additive error model ($f(x)+ \epsilon$).
 
+We can apply the same treatement to qualitative outputs, in this case the target function is the conditional density $P(G|X)$, this is usually modeled directly by estimating $P$ (in quantitative outputs we started by modeling a relationship between $E(Y|X)$ and $f$, such an example was the additive error model, only then did we start modeling $f$; this approach isn't common for qualitative outputs).\
+Let's consider a qualitative example : consider a binary qualitative response $G$; We can model $p(x)$ to be the proba of having $G_1$ as a response for $x$, and (naturally) $1-p(x)$ to be the proba of having $G_2$ as a response. If we use a 1-0 coding then $E(Y|X=x) = p(x)$ (since it's $1*p+ 0* (1-p)$) and $\text{Var}(Y|X) = p(x)(1-p(x))$ additionaly (so both mean and variance depend on $x$ in this model).
 
+### Two points of view on supervised learning
+There are two points of view for this function fitting paradigm we're discussing :
+- The machine learning point of view : The machine attemps to learn $f$ through a teacher providing a test set of observations $T$, it can also correct its estimation $\hat f$ based on differences $|y- \hat f|$ in $T$. Teacher mothods are either ML (analogies to human reasoning) or DL (analogies on the way the brain works).
 
+- The function approximation and estimation point of view : Here we consider a $p+1$ Eucleadean space and a set of representations $T$ (say a set of points $T$ in it). We want to create a $p$-dimensionally-inputed function $f$ (that is realted to the data via some model like the additive error). The goal is to obtain a **useful** approximation of $f$ over some region given the representations in $T$ . This point of view allows us to introduce geometrical concepts from eucleadean spaces and mathematical concepts from statistical inference to the scene.
 
+Many of the approximations we will encounter are associated a set of parameters $\theta$ that can be modified to suit the data at hand. The linear model (\beta = \theta) is an example, another useful class is that of a linear basis expansions : $f_{\theta}(x) = \sum h_k(x) \theta_k$\
+With $h_k$ a suitable set of functions or transformations to $x$. $h_k$ might contain its own set of parameters (but this will add another layer of complexity, and such case is usally treated with iterative methods or numerical optimization).[^14] \
+To estimate the parameters $\theta_k$ in such a model, we can use least squares (just like we did for the linear model). From the function approximation point of view, we are basically creating a p-dimensional surface $f$ such that (our goal being that) the surface is as close (RSS being used as a measure of this "closeness") as possible to the points in $T$ (which are noisy realisations from it _d'apres_ our model definition).
 
+It should be noted that least squares is not the only criterion that can be used (and in some cases doesn't even make sense). A more general measure is the log probability  $L(x) = \sum \text{log} Pr(y-\hat y | X= x)$.\
+We are essentially considering that the best model is the one that makes it hardest to stray from $y$.
 
 
 
@@ -223,5 +236,6 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^9] Learning this made me so happy, insights like these are the reason I didn't want to drop ESL for ISL.
 - [^10] When deriving, we get $E(X (Y - X^T \beta)) = E(XY) - E(X X^T \beta) = E(XY) - E(X X^T) \beta$, setting this to $0$ and solving for beta yields the desired result.
 - [^11] Reminder that $\hat \beta = (X^T X)^{-1} XY$ while $\beta = E(X^T X)^{-1} E(XY)$, this gives us a second proof on why the $\hat \beta$ estimator is unbiased (other than the one through the relation btween the two).
-- [^12] Will continue this proof later
+- [^12] Will continue this proof later.
 - [^13] the idea will be explained when dealing with $x_0 x_0^T$ but basically calculate $E(X^T X)$, where $X^T X$ = { $\sum_{k = 1}^N x_{ki} x_{kj}$ }, and $x_{ki} = x_{ki} - E(x_{ki})$, creating the formula for coviariance multiplied by $N$ : $cov(a,b) = \frac{\sum [a_i-E(a_i)] [b_i - E(b_i)]}{n}$
+- [^14] To not get lost, just rmemeber that this is simply an example of other approximation models.
