@@ -213,10 +213,12 @@ Many of the approximations we will encounter are associated a set of parameters 
 With $h_k$ a suitable set of functions or transformations to $x$. $h_k$ might contain its own set of parameters (but this will add another layer of complexity, and such case is usally treated with iterative methods or numerical optimization).[^14] \
 To estimate the parameters $\theta_k$ in such a model, we can use least squares (just like we did for the linear model). From the function approximation point of view, we are basically creating a p-dimensional surface $f$ such that (our goal being that) the surface is as close (RSS being used as a measure of this "closeness") as possible to the points in $T$ (which are noisy realisations from it _d'apres_ our model definition).
 
-It should be noted that least squares is not the only criterion that can be used (and in some cases doesn't even make sense). A more general measure is the log probability  $L(x) = \sum \text{log} Pr(y-\hat y | X= x)$.\
-We are essentially considering that the best model is the one that makes it hardest to stray from $y$.
+It should be noted that least squares is not the only criterion that can be used (and in some cases doesn't even make sense). A more general measure is the maximum likelihood estimation. The log probability of the sample is $L(\theta) = \sum^N \text{log} P_\theta (y_i)$.\
+The principle of max likelihood is that "the most reasonable $\theta$ are those for which probability of the observed sample is the largest".\
+We then model our Pr(y_i). Using for example $P(y_i) = N(f_\theta (x), \sigma^2)$ where $N$ is the normal distribution gives us RSS [^15] !\
+One counter intuitive fact is that, although the model we defined for $P(\theta)$ here is actually equivalent to $y = f(x) + \epsilon$ with $\epsilon$ having a **normal distribution** (while no distribution was imposed when doing RSS), this additional assumption doesn't change anything about the result at all. (again to not get lost, here we expanded a bit more on criterions we can use to pick $\theta$s -aka parameters- for our models).
 
-
+### Structured Regression Models
 
 
 
@@ -239,3 +241,4 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^12] Will continue this proof later.
 - [^13] the idea will be explained when dealing with $x_0 x_0^T$ but basically calculate $E(X^T X)$, where $X^T X$ = { $\sum_{k = 1}^N x_{ki} x_{kj}$ }, and $x_{ki} = x_{ki} - E(x_{ki})$, creating the formula for coviariance multiplied by $N$ : $cov(a,b) = \frac{\sum [a_i-E(a_i)] [b_i - E(b_i)]}{n}$
 - [^14] To not get lost, just rmemeber that this is simply an example of other approximation models.
+- [^15] very simple proof, just replace with the formula for normal distribution. Remember that the criterions (Max Likelihood / Least squares etc) we use are applied ON $T$ and not the whole space X.
