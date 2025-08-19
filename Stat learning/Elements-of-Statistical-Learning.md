@@ -201,7 +201,7 @@ In this new model, both the mean and the variance depend on $X$ (prev one was ju
 $Pr(Y|X)$ can depend on $X$ in complicated ways but these aren't possible in the additive error model ($f(x)+ \epsilon$).
 
 We can apply the same treatement to qualitative outputs, in this case the target function is the conditional density $P(G|X)$, this is usually modeled directly by estimating $P$ (in quantitative outputs we started by modeling a relationship between $E(Y|X)$ and $f$, such an example was the additive error model, only then did we start modeling $f$; this approach isn't common for qualitative outputs).\
-Let's consider a qualitative example : consider a binary qualitative response $G$; We can model $p(x)$ to be the proba of having $G_1$ as a response for $x$, and (naturally) $1-p(x)$ to be the proba of having $G_2$ as a response. If we use a 1-0 coding then $E(Y|X=x) = p(x)$ (since it's $1*p+ 0* (1-p)$) and $\text{Var}(Y|X) = p(x)(1-p(x))$ additionaly (so both mean and variance depend on $x$ in this model).
+Let's consider a qualitative example : consider a binary qualitative response $G$; We can model $p(x)$ to be the proba of having $G_1$ as a response for $x$, and (naturally) $1-p(x)$ to be the proba of having $G_2$ as a response. If we use a 1-0 coding then $E(Y|X=x) = p(x)$ (since it's 1*p+ 0* (1-p) ) and $Var(Y|X) = p(x)(1-p(x))$ additionaly (so both mean and variance depend on $x$ in this model).
 
 ### Two points of view on supervised learning
 There are two points of view for this function fitting paradigm we're discussing :
