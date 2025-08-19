@@ -190,7 +190,13 @@ Making our quantity finally : $E_{x_0} \text{EPE}(x_0) = \sigma^2 + \frac{p}{N} 
 As we can see, it grows linearly with p/N, if N is large (or $\sigma ^2 $) is small, the variable term is negligible...\
 This captures the power of models : by imposing some heavy restrictions on the class of models being fitted (as in, only considering linear models), we escaped the curse of dimensionality ! (avoiding the exponential growth in complexity of functions in higher dimensions).
 
+### Statistical models, supervised learning and functional approximation
+We saw that squared error loss leads to the regression function $f(x) = E(Y | X= x)$, the class of KNN methods is a direct estimate but it fails in higher dimensions because of the curse of dimensionality on one side, and the fact that if there's some structure to the data then that can be used to reduce the vol and bias of the estimates.\
+We can use other classes of models for $f(x)$ depending on the situation, we will discuss a framework that allows us to incorporate them into the prediction problem :
 
+#### A statistical model for joint distribution
+Let's start with our initial presented model : $Y = f(X) + \varepsilon$, we assumed that all unmeasured variables and measurement is captured in a single variable $\varepsilon$ **independent** of $X$, but that is not always necessarily the case.\
+We can modify our example, for example, to include the case where our error variable can be dependent on $X$ : $\text{Var}(\epsilon | X) = \sigma(X)^2$
 
 
 
