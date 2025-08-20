@@ -277,7 +277,7 @@ all the models we just discussed have a complexity/smootheness component : coefi
 
 Just like we hinted in the previous title, including these parameters as factors to optimize in our residual sum of squares or other constraints, since this optimisation would favor parameters that create a zero residual (that overfit basically)...
 
-The title ends with a discussion on the bias-variance tradeoff, but we will refrain from this since it's a repetition of what was already discussed in the ISL chapter 2.
+The title ends with a discussion on the bias-variance tradeoff, but we will refrain from this since it's a repetition of what was already discussed in the ISL chapter 2. [^21]
 
 # Footnotes :
 - [^1] -- free will ?.
@@ -304,3 +304,4 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^18] Remember that these are local methods, they create models that fit locally ! This is why we're considering $RSS(x_0)$ instead of $E_{X}(RSS(x_0))$.
 - [^19] In the book the author's formula is (the equivalent of) $K+M$, BUT in the example he provides, he says it's a linear splines but says that $K$ (of the degree)  $= 2$, either it's a typo or a just how degrees are defined for splines, our two formulas are equivalent eitherway.
 - [^20] for example, if $h_1(x_1)$ and $h_2(x_2)$ are two basis functions then the tensor product $h_1(x_1) h_2(x_2)$ is a two-dimensional basis function.
+- [^21] a formula for $EPE_k(x_0)$ of KNN was also derived but it's done very trivially so why waste time ?
