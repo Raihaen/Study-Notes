@@ -275,6 +275,10 @@ Lastly, note that these basis function methods are also reffered to as dictionar
 ### Model Selection and the Bias-Variance tradeoff
 all the models we just discussed have a complexity/smootheness component : coeficient of the penality term in Bayes methods ($\lambda$), width of the kernels in kernel methods ($\lambda$) and number of basis functions ($M$).
 
+Just like we hinted in the previous title, including these parameters as factors to optimize in our residual sum of squares or other constraints, since this optimisation would favor parameters that create a zero residual (that overfit basically)...
+
+The title ends with a discussion on the bias-variance tradeoff, but we will refrain from this since it's a repetition of what was already discussed in the ISL chapter 2.
+
 # Footnotes :
 - [^1] -- free will ?.
 - [^2] -- proof : $E[{(Y- \hat Y)}^2] = E[(f + \epsilon - \hat f)^2] = E[f^2 + \hat f ^2 + \epsilon ^2 + 2 \epsilon (f-\hat f) - 2 (f \cdot \hat f)] = E[(f-\hat f)^2] + E(\epsilon ^2 ) + 2 E(\epsilon) \cdot E(f - \hat f)$. -- since $\epsilon$ is independent from both $f$ and $\hat f$.\
