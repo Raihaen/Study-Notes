@@ -251,15 +251,29 @@ In our case, PRSS is our log-posterior (minimizing it $\Leftarrow$ finding the p
 #### Kernel methods and local regression
 These methods can be thought of as explicitely providing estimates to the regression fonction / conditional expectation by specifying the nature of the neighborhood and of the classe of regular fonctions fitted locally.
 
-The neighborhood is specified by a kernel function $K(x,x_0)$ (that basically assigns a weight to each elment in $T$ based on 'how similar they are according to some metric' (that's all you need to understand for now). To give some examples, consider the gaussian kernel ($\frac{1}{\lambda} e^{- \frac{||x-x_0||^2}{2 \lambda}}$) or the Nadayara-Watson weighted average (this one is basically a weighted KNN).
+The neighborhood is specified by a kernel function $K(x,x_0)$ (that basically assigns a weight to each elment in $T$ based on 'how similar they are according to some metric' (that's all you need to understand for now). To give some examples, consider the gaussian kernel ($\frac{1}{\lambda} e^{- \frac{||x-x_0||^2}{2 \lambda}}$) or the Nadayara-Watson weighted average (this one is basically a weighted KNN).\
+Neirest neighbor methods cna be thought of as kernel methods with data-dependent kernels.
 
-In general we define a **local** (emphasis on local!) regression estimate of $f(x_0)$ as $f_{\hat \theta}(x_0)$, where $\hat \theta$ minimizes : 
-$RSS(\hat \theta, x_0) = \sum^N K_\lambda(x, x_0) (y_i - f_\theta (x_i))$
+In general we define a **local** (emphasis on local!) regression estimate of $f(x_0)$ as $f_{\hat \theta}(x_0)$, where $\hat \theta$ minimizes [^18] : 
+$RSS(f_\theta, x_0) = \sum^N K_\lambda (x_0, x) (y_i - f_\theta (x_i))$.\
+Here $f_\theta$ is some parametrized function such as a low order polynomial for example ($\sum x^i \theta_i$).
+
+It should be noted that these methods are dimension sensitive and need to be modified in high dimension to avoid the curse of dimensionality
 
 #### Basis functions and Dictionary methods
+This class of methods includes the families of polynomial expansions (linear included) and, more importantly, a wide variety of more flexible models. The model for $f$ is of the form (a linear expansion of basis functions) : $f_\theta(x) = \sum \theta_i h_i(x)$ such that $h_i$ is a basis function (that is, it can't be formed using a linear combination of other basis functions). The term linear here reffers to the actions of the parameter $\theta$ (basically $\theta^T h$).\
+As you can notice, there are now restrictions on what $h_k$ can be; in some cases, the sequence of basis function is prescribed (for example a basis of polynomials {$1,x,x^2, ..., x^K$}).\
 
+An example on such methods is polynomial splines of degree $K$ for a one-dimensional $x$. A polynomial splines (of deg $K$) is a function defined in different forms (polynomials of degree max $K$ tho)  on each interval $[t_i, t_{i+1}]$, where each $t_i$ is named a knot -- With the condition that this spline is continious up to degree $K-1$ (so all derivated functions up to $f^{(K-1)'}$ are continious). The polynomial splines can be written either by interval ($p_i$ on $[t_i, t_{i+1}]$) or, as a sum of basis functions (the form that intrests us), in the form $P(x) + \sum (x-t_i)_+^a_k$, with $P$ being of degree $K$, we will need $K+1$ basis polynomials to represent it {$1,x, ..., x^K$}, and since each of the $(x-t_i)_+$ can't be written as a combination of other basis polynomials (since it's only contains the positive part of the polynomial), each is also a basis function for our polynomial splines. this thus gives us for degree $K$ and $M$ knots $M+K+1$ basis functions ! [^19]
 
+Tensor products [^20] can also be used for inputs with dimension larger than one (imagine generalizatin of the splines etc). The parameter $\theta$ can be the total degree of the polynomial or the number of knots in the case of spline...
 
+Another example is Radial basis functions, which are symetric p-dimentional kernels located at particular centroids, $f_\theta$ is then : $\f_\theta (x) = \sum_m K_\lambda (\mu_m, x) \theta_m$, the gaussian kernel is popular... In these functions, scales $\lambda_m$ and centroids $\mu_m$ need to be determined (draw paralels to splines having knots)... In general, we'd want the data to dictate them, as including them as parameters amplifies how complicated the problem is, taking it from a linear problem to a combnatorially hard non linear problem -- in practice methods such as greedy algorithms / two stage processes (optimize of a set then the second) are used.
+
+Lastly, note that these basis function methods are also reffered to as dictionary methods : you have a possibly infinite set (or dictionary $D$) of candidate basis functions and you make models through a search mechanism (just like you build sentences...)
+
+### Model Selection and the Bias-Variance tradeoff
+all the models we just discussed have a complexity/smootheness component : coeficient of the penality term in Bayes methods ($\lambda$), width of the kernels in kernel methods ($\lambda$) and number of basis functions ($M$).
 
 # Footnotes :
 - [^1] -- free will ?.
@@ -283,3 +297,6 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^15] very simple proof, just replace with the formula for normal distribution. Remember that the criterions (Max Likelihood / Least squares etc) we use are applied ON $T$ and not the whole space X.
 - [^16] If our $T$ contains multiple observations for each $x$, then our function would pass through the average values of $y_i$, and all solutions would tend to the limiting conditional expectation with large $T$ (again containing multiple observations per $x$).
 - [^17] The bayesian framework is basically that the selection of parameters based on the data can be separated into 3 components following Bayes' equation : $P(\theta | y) = \frac{P(y|\theta) P(\theta)}{P(Y)}$ , this ca then separated using the log operation : $log(P(y|\theta))$ is called the log-likelihood (it represents how well our model fits the data), $log P(\theta| y)$ the log posteriori (our goal). $P(\theta)$ is the log prior and it represents our model of $f$, based on experience / assumptions etc. $log P(y)$ is the log-evidence and is a constant related to our observations.
+- [^18] Remember that these are local methods, they create models that fit locally ! This is why we're considering $RSS(x_0)$ instead of $E_{X}(RSS(x_0))$.
+- [^19] In the book the author's formula is (the equivalent of) $K+M$, BUT in the example he provides, he says it's a linear splines but says that $K$ (of the degree)  $= 2$, either it's a typo or a just how degrees are defined for splines, our two formulas are equivalent eitherway.
+- [^20] for example, if $h_1(x_1)$ and $h_2(x_2)$ are two basis functions then the tensor product $h_1(x_1) h_2(x_2)$ is a two-dimensional basis function.
