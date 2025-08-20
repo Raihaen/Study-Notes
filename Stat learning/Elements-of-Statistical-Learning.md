@@ -246,8 +246,12 @@ The roughness penalty controles large values of the second derivative while $\la
 Penalty functionals $J$ can be constructed in any dimension, special cases to cover special structures too (for example a sum of additive junction functions etc).
 
 Lastly, penalty functions express our prior (check the start of the chapter) belief that the type of function we seek exhebits a certain smooth behavior and can usually be cast in a bayesian framework [^17].\
+In our case, PRSS is our log-posterior (minimizing it $\Leftarrow$ finding the posterior mode), and J represents our log-prior.
 
 #### Kernel methods and local regression
+These methods can be thought of as explicitely providing estimates to the regression fonction / conditional expectation by specifying the nature of the neighborhood and of the classe of regular fonctions fitted locally.
+
+The neighborhood is specified by a kernel function $K(x,x_0)$ (that basically assigns a weight to each elment in $T$ based on 'how similar they are according to some metric' (that's all you need to understand for now). To give some examples, consider the gaussian kernel ($\lambda e^{- \frac{||x-x_0||^2}{2 \lambda}}$) or the Nadayara-Watson weighted average (this one is basically a weighted KNN)
 
 #### Basis functions and Dictionary methods
 
