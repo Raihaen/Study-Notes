@@ -251,7 +251,10 @@ In our case, PRSS is our log-posterior (minimizing it $\Leftarrow$ finding the p
 #### Kernel methods and local regression
 These methods can be thought of as explicitely providing estimates to the regression fonction / conditional expectation by specifying the nature of the neighborhood and of the classe of regular fonctions fitted locally.
 
-The neighborhood is specified by a kernel function $K(x,x_0)$ (that basically assigns a weight to each elment in $T$ based on 'how similar they are according to some metric' (that's all you need to understand for now). To give some examples, consider the gaussian kernel ($\frac{1}{\lambda} e^{- \frac{||x-x_0||^2}{2 \lambda}}$) or the Nadayara-Watson weighted average (this one is basically a weighted KNN)
+The neighborhood is specified by a kernel function $K(x,x_0)$ (that basically assigns a weight to each elment in $T$ based on 'how similar they are according to some metric' (that's all you need to understand for now). To give some examples, consider the gaussian kernel ($\frac{1}{\lambda} e^{- \frac{||x-x_0||^2}{2 \lambda}}$) or the Nadayara-Watson weighted average (this one is basically a weighted KNN).
+
+In general we define a **local** (emphasis on local!) regression estimate of $f(x_0)$ as $f_{\hat \theta}(x_0)$, where $\hat \theta$ minimizes : 
+$RSS(\hat \theta, x_0) = \sum^N K_\lambda(x, x_0) (y_i - f_\theta (x_i))$
 
 #### Basis functions and Dictionary methods
 
