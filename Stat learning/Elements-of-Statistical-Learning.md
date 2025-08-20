@@ -239,9 +239,13 @@ We now discuss these classes of methods, note that they are not distinct, and so
 
 #### Roughness penalty and Bayesian Methods
 $PRSS(f,\lambda)= \sum (y-f(x))^2 + \lambda J(f)$
-We (explicitely) penalize functions that vary too rapidely over small regions (a manifestation of overfit). For example the cubic smoothing spline is of the the solution of : $PRSS(f,\lambda) = \sum (y-f(x))^2 + \lambda \int [f''(x)]^2 dx$.
+We (explicitely) penalize functions that vary too rapidely over small regions (a manifestation of overfit).\
+For example the cubic smoothing spline is of the the solution of : $PRSS(f,\lambda) = \sum (y-f(x))^2 + \lambda \int [f''(x)]^2 dx$.\
 The roughness penalty controles large values of the second derivative while $\lambda$ (smoothing parameter) controls the amount of penalty (think from $0$ to $\infty$).
 
+Penalty functionals $J$ can be constructed in any dimension, special cases to cover special structures too (for example a sum of additive junction functions etc).
+
+Lastly, penalty functions express our prior (check the start of the chapter) belief that the type of function we seek exhebits a certain smooth behavior and can usually be cast in a bayesian framework [^17].\
 
 #### Kernel methods and local regression
 
@@ -271,3 +275,4 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^14] To not get lost, just rmemeber that this is simply an example of other approximation models.
 - [^15] very simple proof, just replace with the formula for normal distribution. Remember that the criterions (Max Likelihood / Least squares etc) we use are applied ON $T$ and not the whole space X.
 - [^16] If our $T$ contains multiple observations for each $x$, then our function would pass through the average values of $y_i$, and all solutions would tend to the limiting conditional expectation with large $T$ (again containing multiple observations per $x$).
+- [^17] The bayesian framework is basically that the selection of parameters based on the data can be separated into 3 components following Bayes' equation : $P(\theta | y) = \frac{P(y|\theta) P(\theta)}{P(Y)}$ , this ca then separated using the log operation : $log(P(y|\theta))$ is called the log-likelihood (it represents how well our model fits the data), $log P(\theta| y)$ the log posteriori (our goal). $P(\theta)$ is the log prior and it represents our model of $f$, based on experience / assumptions etc. $log P(y)$ is the log-evidence and is a constant related to our observations.
