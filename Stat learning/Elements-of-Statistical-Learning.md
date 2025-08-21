@@ -167,7 +167,8 @@ This yields $\hat y - y = (X^T X)^{-1} X \varepsilon$.\
 Calculating the EPE and dividing it into our usual components :
 $\text{EPE} = E_{x_0} E_{T}(y_0 - x_0^T \hat \beta)$ (Here $T$ represents the set of the testing samples).\
 $EPE(x_0) = Var(y_0 | x_0) + Bias(\hat y_0)^2 + Var_T(\hat y_0) $ (our usual decomposition).\
-Now we know :\
+
+Now we know :
 $\hat y_0$ is unbiased, and that $\text{Var}(y_0 | x_0) = \sigma^2$ is a systematic error outside the scope of the model, we thus get :\
 $\text{EPE} =  \sigma^2 +  Var_T ( x_0^T \hat \beta)$\
 $\text{EPE} = \sigma^2 +  Var_T ( x_0^T (X^T X)^{-1} XY)$\
