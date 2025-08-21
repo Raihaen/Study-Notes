@@ -5,7 +5,7 @@ The following are my notes from [Elements of statistical learning](https://www.s
 
 First of all, it should be noted that I relied on Max Dama's [recommendations on most useful chapters of the book](https://blog.headlandstech.com/2022/02/16/elements-of-statistical-learning-8-10/) (I was lucky enough to have a conversation with him). 
 
-These notes also contain notes to another (more elementary) book  -- [Introduction to Statistical learning](https://www.stat.berkeley.edu/~rabbee/s154/ISLR_First_Printing.pdf), these notes also go through a few of its chapters, especially at the beguinning (I always say which is which).
+These notes also contain notes to another (more elementary) book  -- [Introduction to Statistical learning](https://www.stat.berkeley.edu/~rabbee/s154/ISLR_First_Printing.pdf), these notes go through a few of its chapters, especially at the beguinning (I always say which is which).
 
 ## Chapter I [ESL]
 Supervised learning is when we have an outcome variable to 'guide the learning process', thus we compare our model's result $\hat y$ to some desired result $y$.
