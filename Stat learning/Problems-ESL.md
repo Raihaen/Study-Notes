@@ -4,4 +4,4 @@ This file contains my thoughts/commentairy on attempted problems in ESL. I might
 
 ## Chapter 2:
 
-*P1:* Trivial problem. The condition of $ \hat{y} $ summing to 1 isn't really needed... You basically just use the distance formula $\sqrt{\sum_{i \not = k} x_i^2 + (x_k -1)^2} )$
+*P1:* Trivial problem. The condition of $ \hat{y} $ summing to 1 isn't really needed... You basically just minimize the distance formula $\sqrt{\sum_{i \not = k} x_i^2 + (x_k -1)^2}$ , this leads to maximizing $x_k$
