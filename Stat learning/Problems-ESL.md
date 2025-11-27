@@ -1,6 +1,6 @@
 # ESL Problems
 
-This file contains my thoughts/commentairy on attempted problems in ESL. 
+This file contains my thoughts/commentairy on attempted problems in ESL. I might occasionally refer to (this solution manual)[https://waxworksmath.com/Authors/G_M/Hastie/WriteUp/Weatherwax_Epstein_Hastie_Solution_Manual.pdf].
 
 ## Chapter 2:
 
