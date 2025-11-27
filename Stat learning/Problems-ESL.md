@@ -11,6 +11,6 @@ Now the author gave us 2 ways of generating data, either 2 gaussians with the sa
 It should be stated that we're talking about covariance matrices that are of the form $C* I_2$... \
 For the first distribution, the boundary will be in the form of a line (anyone wants a geometrical proof with power of a point?? ;)) ).\ 
 The second case however is more interesting, our $PDF_1$ is a sum of multiple gaussian $PDFs$ with different mean vectors... \
-Beyond what the problem is asking, an interesting thing to check is how this bayes boundary changes when we change the variance in the 2 mean vectors case (lines/quadratic curves...). These are derived from equating the two $PDF$ formulas in their general form.
-\\
+Beyond what the problem is asking, an interesting thing to check is how this bayes boundary changes when we change the variance in the 2 mean vectors case (lines/quadratic curves...). These are derived from equating the two $PDF$ formulas in their general form.\
+
 Note : this only is the case when the priors are equal (in our case, say we decided to generate equal number of points from 1st class as second... If that was not the case, then our equation changes. A more general one is $\pi_1 * PDF_1 = \pi_2 * PDF_2$)
