@@ -16,4 +16,5 @@ Beyond what the problem is asking, an interesting thing to check is how this bay
 Note : this only is the case when the priors are equal (in our case, say we decided to generate equal number of points from 1st class as second... If that was not the case, then our equation changes. A more general one is $\pi_1 * PDF_1 = \pi_2 * PDF_2$)
 
 **P3:** This was also a simple one, (precising the difficulty at each exercise because ESL's problems have this reputation on the web of being hard, so I'm trying to keep notes of which ones are actually hard... ). The solution comes from calculating the cumulative distribution function : notice that the probability of a point being in the $r$-radius $p$-dimenssioned sphere is $r^p$ (sphere volume divided by unit sphere volume).\
-And so, the proba of no point being in it is $(1 - r^p)^N$ which makes $P(min(d) \leq x) = 1 - (1 - r^p)^N $
+And so, the proba of no point being in it is $(1 - r^p)^N$ which makes $P(min(d) \leq x) = 1 - (1 - r^p)^N $. Setting this CDF equal to $\frac{1}{2}$ gives us the desired result...\
+Another interesting question would be calculating the mean, in which case we can either derive our CDF and integrate $\int_0^1 PDF(x) x$
