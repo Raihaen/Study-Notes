@@ -14,3 +14,6 @@ The second case however is more interesting, our $PDF_1$ is a sum of multiple ga
 Beyond what the problem is asking, an interesting thing to check is how this bayes boundary changes when we change the variance in the 2 mean vectors case (lines/quadratic curves...). These are derived from equating the two $PDF$ formulas in their general form.\
 
 Note : this only is the case when the priors are equal (in our case, say we decided to generate equal number of points from 1st class as second... If that was not the case, then our equation changes. A more general one is $\pi_1 * PDF_1 = \pi_2 * PDF_2$)
+
+**P3:** This was also a simple one, (precising the difficulty at each exercise because ESL's problems have this reputation on the web of being hard, so I'm trying to keep notes of which ones are actually hard... ). The solution comes from calculating the cumulative distribution function : notice that the probability of a point being in the $r$-radius $p$-dimenssioned sphere is $r^p$ (sphere volume divided by unit sphere volume).\
+And so, the proba of no point being in it is $(1 - r^p)^N$ which makes $P(min(d) \leq x) = 1 - (1 - r^p)^N $
