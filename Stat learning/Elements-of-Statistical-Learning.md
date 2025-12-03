@@ -171,8 +171,11 @@ $EPE(x_0) = Var(y_0 | x_0) + Bias(\hat y_0)^2 + Var_T(\hat y_0) $ (our usual dec
 Now we know :
 $\hat y_0$ is unbiased, and that $\text{Var}(y_0 | x_0) = \sigma^2$ is a systematic error outside the scope of the model, we thus get :\
 $\text{EPE} =  \sigma^2 +  Var_T ( x_0^T \hat \beta)$\
-$\text{EPE} = \sigma^2 +  Var_T ( x_0^T (X^T X)^{-1} XY)$\
-$\text{EPE} = \sigma^2 +  Var_T ( x_0^T (X^T X)^{-1} X) \cdot \sigma^2$ [^12].\
+$\text{EPE} = \sigma^2 +  E_T( Var(x_0^T \hat \beta ))$.\
+$\text{EPE} = \sigma^2 +  E_T( x_0^T Var(\hat \beta x_0 ))$\
+$\text{EPE} = \sigma^2 +  E_T( x_0^T (X^T X)^-1 \sigma^2 x_0)$ [^12] \
+
+
 This yields : 
 $\text{EPE} = \sigma^2 +  E_T x_0^T (X^T X)^{-1} x_0 \sigma^2$.\
 Now if $E(X)=0$, $N$ is large enough and $T$ is selected at random, we can use the following approximation : $X^T X \approx N Cov(X)$ [^13]. This gives us :   
@@ -296,7 +299,7 @@ $\text{Var}(\epsilon) +  \text{Var}(\hat f(x_0)) + [\text{Bias}(\hat f(x_0))]^2$
 - [^9] Learning this made me so happy, insights like these are the reason I didn't want to drop ESL for ISL.
 - [^10] When deriving, we get $E(X (Y - X^T \beta)) = E(XY) - E(X X^T \beta) = E(XY) - E(X X^T) \beta$, setting this to $0$ and solving for beta yields the desired result.
 - [^11] Reminder that $\hat \beta = (X^T X)^{-1} XY$ while $\beta = E(X^T X)^{-1} E(XY)$, this gives us a second proof on why the $\hat \beta$ estimator is unbiased (other than the one through the relation btween the two).
-- [^12] Will continue this proof later.
+- [^12] This makes use of $Var(\hat \Beta) = (X^T X)^-1 \sigma ^2$ .
 - [^13] the idea will be explained when dealing with $x_0 x_0^T$ but basically calculate $E(X^T X)$, where $X^T X$ = { $\sum_{k = 1}^N x_{ki} x_{kj}$ }, and $x_{ki} = x_{ki} - E(x_{ki})$, creating the formula for coviariance multiplied by $N$ : $cov(a,b) = \frac{\sum [a_i-E(a_i)] [b_i - E(b_i)]}{n}$
 - [^14] To not get lost, just rmemeber that this is simply an example of other approximation models.
 - [^15] very simple proof, just replace with the formula for normal distribution. Remember that the criterions (Max Likelihood / Least squares etc) we use are applied ON $T$ and not the whole space X.
