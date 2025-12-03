@@ -19,6 +19,6 @@ Note : this only is the case when the priors are equal (in our case, say we deci
 And so, the proba of no point being in it is $(1 - r^p)^N$ which makes $P(min(d) \leq x) = 1 - (1 - r^p)^N $. Setting this CDF equal to $\frac{1}{2}$ gives us the desired result...\
 Another interesting question would be calculating the mean, in which case we can either derive our CDF and integrate $\int_0^1 PDF(r) r \hspace{0.1cm} dr$, or just integrate $\int_0^1 1 - CDF(x)dx$
 
-**P4:** This question, although scarry at first glance is pretty simple. The 2nd part i.e. (the target point has expected squared distance of &p&) directly follows from the &\Khi^2& distribution.\
+**P4:** This question, although scarry at first glance is pretty simple. The 2nd part i.e. (the target point has expected squared distance of &p&) directly follows from the $\Chi^2$ distribution.\
 As for the first part, we are basically examining $\sum^p a_i \cdot v_i$ with $v$ being a training point.\
 We have $v_i ~ N(0,1) \forall v_i$ this means our sum follows a law $N(\sum (a_i \cdot 0) , \sum (a_i^2 \cdot 1))$. Since $a$ is a unit vector, $E(a_i) = E(\frac{x_i}{|| x ||})$, we can say that the $z_i$s follow a $N(0,1)$ distribution
