@@ -172,7 +172,7 @@ Now we know :
 $\hat y_0$ is unbiased, and that $\text{Var}(y_0 | x_0) = \sigma^2$ is a systematic error outside the scope of the model, we thus get :\
 $\text{EPE} =  \sigma^2 +  Var_T ( x_0^T \hat \beta)$\
 $\text{EPE} = \sigma^2 +  E_T( Var(x_0^T \hat \beta ))$.\
-$\text{EPE} = \sigma^2 +  E_T( x_0^T Var(\hat \beta x_0 ))$\
+$\text{EPE} = \sigma^2 +  E_T( x_0^T Var_T(\hat \beta x_0 ))$\
 $\text{EPE} = \sigma^2 +  E_T( x_0^T (X^T X)^-1 \sigma^2 x_0)$ [^12] \
 
 
