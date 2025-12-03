@@ -22,3 +22,5 @@ Another interesting question would be calculating the mean, in which case we can
 **P4:** This question, although scarry at first glance is pretty simple. The 2nd part i.e. (the target point has expected squared distance of &p&) directly follows from the $\Chi^2$ distribution.\
 As for the first part, we are basically examining $\sum^p a_i \cdot v_i$ with $v$ being a training point.\
 We have $v_i ~ N(0,1) \forall v_i$ this means our sum follows a law $N(\sum (a_i \cdot 0) , \sum (a_i^2 \cdot 1))$. Since $a$ is a unit vector, $E(a_i) = E(\frac{x_i}{|| x ||})$, we can say that the $z_i$s follow a $N(0,1)$ distribution
+
+**P5:** Check my course notes.
