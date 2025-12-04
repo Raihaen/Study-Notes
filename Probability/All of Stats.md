@@ -17,10 +17,9 @@ We will be discussing 2 main ideas in this part :
 
 We start by giving a rigurous definition of these convergences : 
 - We say that $X_n$ converges in probability to $X$ if : $P(|X_n - X| > \epsilon) \rightarrow 0 \, n \rightarrow \inf$
-- We say that $X_n$ converges in distribution to $X$ if : $CDF_n(t) \rightarrow CDF(t) \, n \rightarrow \inf$ for each point $t$ at which $CDF$ is continious... $CDF_n$ being the Cumulative density function of $X_n$ and $CDF$ that of $X$.
+- We say that $X_n$ converges in distribution to $X$ if : $ \lim_{n \rightarrow \inf} CDF_n(t) \rightarrow CDF(t) $ for each point $t$ at which $CDF$ is continious... $CDF_n$ being the Cumulative density function of $X_n$ and $CDF$ that of $X$.
 We also introduce one more convergence as it's useful in proofs :
-- We say that $X_n$ converges in quadratic mean to $X$ if : $E(X_n - X)^2 > \rightarrow 0 \, n \rightarrow \inf$
-$\rightarrow$\
+- We say that $X_n$ converges in quadratic mean to $X$ if : $E(X_n - X)^2 \rightarrow 0 \, n \rightarrow \inf$\
 The notation changes slightly for a point mass $c$ [^1] , - we replace $X$ by $c$.
 
 **Useful lemma - Markov's inequality:** For non-negative random variable $X$, we have : $P(X>t) \leq \frac{E(x)}{t}$
