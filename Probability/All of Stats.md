@@ -25,4 +25,4 @@ $\rightarrow$ The notation changes slightly for a point mass $c$ [^1]
 
 
 # Footnotes :
-[^1] defined as $F(X) = 0 \forall X < c$ and $F(X) = 1 \for all X \gec c$
+[^1] defined as $F(X) = 0 \forall X < c$ and $F(X) = 1 \for all X \geq c$
