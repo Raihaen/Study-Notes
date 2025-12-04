@@ -21,4 +21,4 @@ We start by giving a rigurous definition of these convergences :
 We also introduce one more convergence as it's useful in proofs :
 - We say that $X_n$ converges in quadratic difference to $X$ if : $E(X_n - X)^2 > \rightarrow 0 \, n \rightarrow \inf$
 
-**Useful lemma - Markov's inequality: ** For non-negative random variable $X$, we have : $P(X>t) \leq \frac{E(x)}{t}$
+**Useful lemma - Markov's inequality:** For non-negative random variable $X$, we have : $P(X>t) \leq \frac{E(x)}{t}$
