@@ -283,6 +283,29 @@ Just like we hinted in the previous title, including these parameters as factors
 
 The title ends with a discussion on the bias-variance tradeoff, but we will refrain from this since it's a repetition of what was already discussed in the ISL chapter 2. [^21]
 
+## Chapter 3 [ISL]
+
+**Is there a relationship between the response and the predictors?** To answer this question, we use t-tests and F-tests (both of which I will go rought thoroughly in the ESL part), and calculate the correspondig p-values for our hypothesis.
+**Are individual t-tests enough to determine if the variables are impactful on the model?** No, especially when you have a lot of variables; for example out of 100 variables, we expect 5 to have p-values less than 0.05, and $1-0.95^100 > 0,99$ chance of at least one having a p-value less than 0.05 out of pure chance, and so, an F-test on the hypothesis $\beta_1= \beta_2 = \dots = \beta_p = 0$ is necessary.
+
+**Variable Selection** Interestingly, the autor didn't go by the approach we learned at school (of checking correlations and so on) -- but maybe they will in the next chapters. He instead focused on using p-values in variable selection and presented 3 methods: forward selection (where you pick the best fitting model with i variables at stage i and then pick one of the $p-i$ variables left to add, minimizing the RSS, until some threshehold), backward selection (where you start with a $p$ variable linear model, and remove the variable with largest p-value, then re-do a model with $n-1$ variables and remove the largest value etc...), and finally mixed selection (where you add the variable with lowest RSS then remove the one with p-value above some threshold, repeat untill adding anymore variables makes it have a p-value above the threshold).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Footnotes :
 - [^1] -- free will ?.
 - [^2] -- proof : $E[{(Y- \hat Y)}^2] = E[(f + \epsilon - \hat f)^2] = E[f^2 + \hat f ^2 + \epsilon ^2 + 2 \epsilon (f-\hat f) - 2 (f \cdot \hat f)] = E[(f-\hat f)^2] + E(\epsilon ^2 ) + 2 E(\epsilon) \cdot E(f - \hat f)$. -- since $\epsilon$ is independent from both $f$ and $\hat f$.\
