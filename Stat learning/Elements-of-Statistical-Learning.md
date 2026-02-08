@@ -294,6 +294,8 @@ The title ends with a discussion on the bias-variance tradeoff, but we will refr
 
 **Confidence intervals vs Prediction intervals** Remember that there are two types of errors, reduceable error and irreduceable error, and so, we we try to use our model for estimates, it's important to keep this in mind. This is why we introduce two intervals, the first one is the confidence interval, which incorportaes reducible error, that is, on average, the response's value will be situated in this range (since $\bar y = \bar{\hat y}$). However, for a specific instance, we use **prediction** intervals (that are always bigger than prediction intervals for obvious reasons $y = f(X) + \epsilon$). An example will be: on average spending $a$ dollars on advertising would increase sales in a city by $[b_1, b_2]$, however, for a specific city, it will increase it with $[b_1 - c, b_2 + c ]$ for some positive $c$.
 
+**Dummy variables** Although the way you set dummy variables (which $p-1$'s will be the $\beta$s and which one will be in the intercept) does not have any effect on the model's outputs, but it does have an effect on the infromation the p-values will convay, and so, it's important to always do an F-test, as that one will not (unlike the p-values) change depending on the $\beta$ choices (not that because if a value of a qualitative variable is significant, then its presence/ absence would be significant so the F-test will be affected eitherway). 
+
 
 
 
