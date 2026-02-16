@@ -296,7 +296,7 @@ The title ends with a discussion on the bias-variance tradeoff, but we will refr
 
 **Dummy variables** Although the way you set dummy variables (which $p-1$'s will be the $\beta$s and which one will be in the intercept) does not have any effect on the model's outputs, but it does have an effect on the infromation the p-values will convay, and so, it's important to always do an F-test, as that one will not (unlike the p-values) change depending on the $\beta$ choices (not that because if a value of a qualitative variable is significant, then its presence/ absence would be significant so the F-test will be affected eitherway). 
 
-
+**Hierarchical principle:** This satates that if we include an interraction in a model, we also need to include the main effects, even if the p-values associated with them are not significant. Since, as the interraction is correlated to the main effects, leaving them would alter the meaning of the interraction (i.e. its coefficient). 
 
 
 
