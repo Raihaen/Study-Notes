@@ -298,6 +298,14 @@ The title ends with a discussion on the bias-variance tradeoff, but we will refr
 
 **Hierarchical principle:** This satates that if we include an interraction in a model, we also need to include the main effects, even if the p-values associated with them are not significant. Since, as the interraction is correlated to the main effects, leaving them would alter the meaning of the interraction (i.e. its coefficient). 
 
+#### Model assumptions:
+Linear regression's assumptions are:
+- A linear relationship between the variables and the response: One way to circumvent this is through polynomial expansions, non-linear terms (say $\sqrt{X}$, $\log{X}$) or interaction variables for example.
+- Uncorrelated errors: This affects the confidence interval ranges (a great example is if you duplicate all of your points, you'd still get the same model but your intervals would be reduced by a factor of $\sqrt{2}$). A way to check for this is to plot the **residual plot** i.e. $y - \hat y$ versus $X$ if $p=1$ or $\hat y$ otherwise. Good experimental design is crucial to avoid this.
+- A constant standard deviation $\sigma$: This can be detected again by the residual plot. In case it happens, a good idea would be to apply concave function transformations to the data ($\sqrt{X}$ or $\log{X}$ for example).
+- No outliers, and no leverage points. Outliers are points for which $Y$ is to different than its peers, while a leverage point is one with an $X$ value too different that its peers. Outliers affect the range, while leverage points highly affect the model's coefficients. One could plot the 
+- Collinearity
+
 
 
 
