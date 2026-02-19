@@ -309,7 +309,7 @@ Linear regression's assumptions are:
 
 #### Comparing to K-nearest neighbors
 
-The KNN regression works in the following way: for a point $x_0$ you define a neighborhood $N_0$ of $K$ points from the training observations and then estimate $f$ using: $ \ frac{1}{K} \sum_{x_i \in N_0} y_i$
+The KNN regression works in the following way: for a point $x_0$ you define a neighborhood $N_0$ of $K$ points from the training observations and then estimate $f$ using: $ \frac{1}{K} \sum_{x_i \in N_0} y_i$
 
 
 
