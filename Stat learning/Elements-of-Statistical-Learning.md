@@ -309,7 +309,7 @@ Linear regression's assumptions are:
 
 #### Comparing to K-nearest neighbors
 
-The KNN regression works in the following way: for a point $x_0$ you define a neighborhood $N_0$ of $K$ points from the training observations and then estimate $f$ using: $ \frac{1}{K} \sum_{x_i \in N_0} y_i$
+The KNN regression works in the following way: for a point $x_0$ you define a neighborhood $N_0$ of $K$ points from the training observations and then estimate $f$ using: $ \frac{1}{K} \sum_{x_i \in N_0} y_i$. This regression is affected by the bias-variance trade-off and the curse of dimensionality. For small numbers of predictors (say < 3 variables), KNN performs better/slightly better than linear regression at its optimal number of points, depending on whether the relation between the response and the predictors is linear or not. However, at higher dimensions, linear regression actually performs better, even when the relationship is non linear. This is due to the curse of dimensionality making it hard to use KNN regressors. And so, we might be wiling to forgo a little bit of prediction accuracy for a predictable, loyal, reliable model (for sure) -- not mentionning the difference in coefficient numbers and its effect on performance metrics.
 
 
 
